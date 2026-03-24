@@ -1,0 +1,2613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENEW — Bowel Health, Prolapse & Pelvic Floor Surgery</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:       #2d7d6f;
+    --teal-light: #e3f0ee;
+    --teal-mid:   #8ec0b8;
+    --teal-dark:  #1a4f46;
+    --teal-deep:  #0f3530;
+    --warm-white: #f9f8f5;
+    --warm-off:   #f2f0eb;
+    --cream:      #e9e4d8;
+    --text-1:     #141f1d;
+    --text-2:     #3d5450;
+    --text-3:     #7a9690;
+    --rust:       #b85c38;
+    --rust-light: #f5ece6;
+    --gold:       #c49a3c;
+    --gold-light: #faf3e0;
+    --border:     rgba(45,125,111,0.13);
+    --r:          18px;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Plus Jakarta Sans',sans-serif; background:var(--warm-white); color:var(--text-1); font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:200; height:68px; background:rgba(249,248,245,0.93); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 2.5rem; justify-content:space-between; }
+  .logo-wrap { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .logo-mark { width:38px; height:38px; background:var(--teal-deep); border-radius:10px; display:flex; align-items:center; justify-content:center; }
+  .logo-mark svg { width:20px; height:20px; }
+  .logo-text-wrap { display:flex; flex-direction:column; line-height:1; }
+  .logo-name { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; letter-spacing:0.12em; color:var(--text-1); }
+  .logo-sub { font-size:9.5px; font-weight:500; letter-spacing:0.1em; color:var(--text-3); text-transform:uppercase; margin-top:1px; }
+  .nav-links { display:flex; gap:2px; list-style:none; }
+  .nav-links a { display:block; padding:8px 13px; font-size:13.5px; color:var(--text-2); text-decoration:none; border-radius:8px; transition:all .18s; }
+  .nav-links a:hover { color:var(--teal-dark); background:var(--teal-light); }
+  .nav-cta { background:var(--teal) !important; color:white !important; border-radius:24px !important; padding:8px 20px !important; font-weight:500 !important; }
+  .nav-cta:hover { background:var(--teal-dark) !important; }
+  .hamburger { display:none; cursor:pointer; flex-direction:column; gap:5px; padding:4px; }
+  .hamburger span { width:22px; height:1.5px; background:var(--text-1); border-radius:2px; display:block; }
+
+  /* HERO */
+  #hero { padding-top:68px; min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; }
+  .hero-bg { position:absolute; inset:0; background:linear-gradient(150deg,var(--teal-deep) 0%,#1e5c52 45%,#2a7065 100%); }
+  .hero-texture { position:absolute; inset:0; background-image:radial-gradient(ellipse at 80% 20%,rgba(255,255,255,0.06) 0%,transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(196,154,60,0.12) 0%,transparent 45%); }
+  .hero-grid { position:absolute; inset:0; opacity:0.04; background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px); background-size:60px 60px; }
+  .hero-inner { position:relative; z-index:1; max-width:1140px; margin:0 auto; padding:5rem 2.5rem 4rem; display:grid; grid-template-columns:1.1fr 0.9fr; gap:4rem; align-items:center; }
+  .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); font-size:12px; font-weight:500; padding:6px 14px; border-radius:24px; margin-bottom:1.5rem; letter-spacing:0.05em; text-transform:uppercase; }
+  .hero-eyebrow span { width:6px; height:6px; background:var(--gold); border-radius:50%; }
+  .hero-title { font-family:'Playfair Display',serif; font-size:clamp(2.8rem,5.5vw,4.2rem); font-weight:400; line-height:1.1; color:white; margin-bottom:1.4rem; }
+  .hero-title em { font-style:italic; color:var(--teal-mid); }
+  .hero-subtitle-line { display:flex; align-items:center; gap:12px; margin-bottom:0.6rem; }
+  .hero-subtitle-line::before { content:''; width:28px; height:1.5px; background:var(--gold); flex-shrink:0; }
+  .hero-tag { font-size:13px; font-weight:500; color:rgba(255,255,255,0.7); letter-spacing:0.04em; text-transform:uppercase; }
+  .hero-sub { font-size:17px; color:rgba(255,255,255,0.72); line-height:1.75; margin-bottom:2.5rem; max-width:500px; }
+  .hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+  .btn-primary { background:white; color:var(--teal-dark); border:none; padding:14px 30px; border-radius:50px; font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; font-weight:600; cursor:pointer; text-decoration:none; transition:all .25s; display:inline-block; }
+  .btn-primary:hover { background:var(--teal-light); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.15); }
+  .btn-ghost { background:transparent; color:white; border:1.5px solid rgba(255,255,255,0.35); padding:13px 28px; border-radius:50px; font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; font-weight:500; cursor:pointer; text-decoration:none; transition:all .25s; display:inline-block; }
+  .btn-ghost:hover { border-color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.08); }
+  .hero-cards { display:flex; flex-direction:column; gap:14px; }
+  .hero-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:var(--r); padding:20px 22px; display:flex; align-items:center; gap:16px; backdrop-filter:blur(8px); transition:transform .3s,background .3s; }
+  .hero-card:hover { background:rgba(255,255,255,0.13); transform:translateX(4px); }
+  .hero-card-icon { width:46px; height:46px; background:rgba(255,255,255,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+  .hero-card-label { font-size:11.5px; color:rgba(255,255,255,0.5); margin-bottom:3px; text-transform:uppercase; letter-spacing:0.06em; }
+  .hero-card-value { font-family:'Playfair Display',serif; font-size:19px; color:white; }
+  .scroll-hint { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; color:rgba(255,255,255,0.35); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; animation:bobble 2s ease-in-out infinite; }
+  @keyframes bobble { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(5px)} }
+
+  /* SECTIONS */
+  section { padding:5.5rem 2.5rem; }
+  .section-inner { max-width:1140px; margin:0 auto; }
+  .s-label { display:inline-block; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--teal); margin-bottom:0.7rem; }
+  .s-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.8vw,2.8rem); font-weight:400; line-height:1.2; letter-spacing:-0.015em; color:var(--text-1); margin-bottom:1rem; }
+  .s-lead { font-size:17px; color:var(--text-2); max-width:580px; line-height:1.75; margin-bottom:3rem; }
+
+  /* MDT CALLOUT */
+  .mdt-callout { margin-top:2.5rem; background:white; border:1px solid var(--border); border-radius:var(--r); padding:28px 32px; display:grid; grid-template-columns:1.6fr 1fr; gap:2.5rem; align-items:start; border-left:4px solid var(--teal); }
+  .mdt-callout-left { display:flex; gap:16px; align-items:flex-start; }
+  .mdt-icon { font-size:28px; flex-shrink:0; margin-top:2px; }
+  .mdt-callout-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:400; color:var(--text-1); margin-bottom:10px; }
+  .mdt-callout-body { font-size:14px; color:var(--text-2); line-height:1.8; }
+  .mdt-callout-body strong { font-weight:600; color:var(--text-1); }
+  .mdt-callout-right { display:flex; flex-direction:column; gap:0; }
+  .mdt-team-item { display:flex; align-items:flex-start; gap:10px; padding:9px 0; border-bottom:1px solid var(--border); }
+  .mdt-team-item:last-child { border-bottom:none; }
+  .mdt-team-dot { width:7px; height:7px; background:var(--teal); border-radius:50%; flex-shrink:0; margin-top:6px; }
+  .mdt-team-item strong { display:block; font-size:13.5px; font-weight:600; color:var(--text-1); margin-bottom:1px; }
+  .mdt-team-item span { font-size:12px; color:var(--text-3); }
+  @media(max-width:960px){ .mdt-callout { grid-template-columns:1fr; } }
+  .what-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+  .what-text p { color:var(--text-2); margin-bottom:1.3rem; line-height:1.8; }
+  .symptom-box { background:var(--warm-off); border-radius:var(--r); padding:26px 28px; margin-top:1.75rem; border:1px solid var(--border); }
+  .symptom-box h4 { font-family:'Playfair Display',serif; font-size:17px; font-weight:400; color:var(--text-1); margin-bottom:1rem; }
+  .symptom-row { display:flex; align-items:flex-start; gap:11px; padding:9px 0; border-bottom:1px solid var(--border); font-size:14.5px; color:var(--text-2); line-height:1.55; }
+  .symptom-row:last-child { border-bottom:none; }
+  .s-dot { width:7px; height:7px; background:var(--teal); border-radius:50%; margin-top:6px; flex-shrink:0; }
+  .anim-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-3); margin-bottom:10px; }
+  .anim-stack { display:flex; flex-direction:column; gap:13px; }
+  .anim-card { background:white; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; cursor:pointer; transition:all .25s; box-shadow:0 2px 14px rgba(45,125,111,0.06); }
+  .anim-card:hover { box-shadow:0 8px 28px rgba(45,125,111,0.15); transform:translateY(-3px); }
+  .anim-thumb { width:100%; height:120px; display:flex; align-items:center; justify-content:center; position:relative; }
+  .at-1 { background:linear-gradient(135deg,#ddeee9,#b8d9d1); }
+  .at-2 { background:linear-gradient(135deg,#ede8df,#d8d0be); }
+  .at-3 { background:linear-gradient(135deg,#dde4f0,#b8c4e0); }
+  .play-ring { width:46px; height:46px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 14px rgba(0,0,0,0.13); transition:transform .22s; }
+  .anim-card:hover .play-ring { transform:scale(1.1); }
+  .play-ring svg { width:15px; height:15px; margin-left:3px; }
+  .anim-body { padding:13px 17px; }
+  .anim-title { font-weight:600; font-size:14px; color:var(--text-1); margin-bottom:3px; }
+  .anim-desc { font-size:13px; color:var(--text-3); line-height:1.5; }
+
+  /* DIAGNOSTIC TESTING */
+  #testing { background:var(--warm-off); }
+  .testing-intro { max-width:680px; margin-bottom:2.5rem; }
+  .testing-intro p { font-size:15px; color:var(--text-2); line-height:1.8; margin-bottom:1rem; }
+  .testing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .test-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:26px 24px; display:flex; flex-direction:column; transition:all .25s; }
+  .test-card:hover { box-shadow:0 8px 28px rgba(45,125,111,0.1); transform:translateY(-3px); }
+  .test-icon { font-size:28px; margin-bottom:14px; }
+  .test-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:400; color:var(--text-1); margin-bottom:4px; }
+  .test-abbr { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--teal); margin-bottom:12px; }
+  .test-body { font-size:13.5px; color:var(--text-2); line-height:1.75; margin-bottom:14px; flex:1; }
+  .test-what { background:var(--warm-off); border-radius:10px; padding:12px 14px; margin-bottom:14px; }
+  .test-what-label { font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-3); margin-bottom:5px; }
+  .test-what-body { font-size:13px; color:var(--text-2); line-height:1.6; }
+  .test-selective { display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; background:var(--teal-light); color:var(--teal-dark); padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; margin-top:auto; }
+  .testing-note { margin-top:2rem; background:white; border:1px solid var(--border); border-radius:var(--r); padding:20px 24px; display:flex; align-items:flex-start; gap:14px; }
+  .testing-note-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+  .testing-note p { font-size:13.5px; color:var(--text-2); line-height:1.75; }
+  .testing-note strong { font-weight:600; color:var(--text-1); }
+  @media(max-width:960px){ .testing-grid { grid-template-columns:1fr; } }
+
+  /* TREATMENT */
+  #treatment { background:var(--warm-off); }
+  .treat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:2rem; }
+  .treat-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:28px 24px; transition:all .25s; position:relative; overflow:hidden; }
+  .treat-card:hover { box-shadow:0 10px 32px rgba(45,125,111,0.11); transform:translateY(-4px); }
+  .treat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+  .treat-card.c1::before { background:var(--teal); }
+  .treat-card.c2::before { background:var(--gold); }
+  .treat-card.c3::before { background:#5a7fc5; }
+  .treat-step { display:inline-flex; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; padding:4px 11px; border-radius:20px; margin-bottom:14px; }
+  .treat-step.s1 { background:var(--teal-light); color:var(--teal-dark); }
+  .treat-step.s2 { background:var(--gold-light); color:#7a5c14; }
+  .treat-step.s3 { background:#eaeff8; color:#2a4480; }
+  .treat-icon { font-size:26px; margin-bottom:12px; }
+  .treat-title { font-family:'Playfair Display',serif; font-size:19px; font-weight:400; margin-bottom:10px; }
+  .treat-body { font-size:14px; color:var(--text-2); line-height:1.75; margin-bottom:16px; }
+  .treat-list { list-style:none; }
+  .treat-list li { font-size:13.5px; color:var(--text-2); padding:5px 0 5px 16px; position:relative; border-bottom:1px solid var(--border); }
+  .treat-list li:last-child { border-bottom:none; }
+  .treat-list li::before { content:'→'; position:absolute; left:0; color:var(--teal); font-size:12px; top:6px; }
+  .philosophy-strip { margin-top:2.5rem; background:linear-gradient(135deg,var(--teal-deep),var(--teal-dark)); border-radius:var(--r); padding:32px 40px; display:flex; align-items:center; gap:24px; color:white; }
+  .philosophy-strip .icon { font-size:38px; flex-shrink:0; }
+  .philosophy-strip blockquote { font-family:'Playfair Display',serif; font-size:19px; font-weight:400; font-style:italic; line-height:1.55; }
+  .philosophy-strip cite { display:block; margin-top:10px; font-style:normal; font-size:13px; opacity:.6; font-family:'Plus Jakarta Sans',sans-serif; }
+
+  /* LIFESTYLE MEDICINE PILLARS */
+  .lm-divider { display:flex; align-items:center; gap:16px; margin:3rem 0 2rem; }
+  .lm-divider-line { flex:1; height:1px; background:var(--border); }
+  .lm-divider-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--teal); white-space:nowrap; }
+  .lm-intro { background:white; border-radius:var(--r); padding:32px 36px; margin-bottom:2rem; border:1px solid var(--border); display:grid; grid-template-columns:1.2fr 0.8fr; gap:2.5rem; align-items:center; }
+  .lm-intro-text h3 { font-family:'Playfair Display',serif; font-size:21px; font-weight:400; margin-bottom:12px; color:var(--text-1); }
+  .lm-intro-text p { font-size:14.5px; color:var(--text-2); line-height:1.8; margin-bottom:0; }
+  .lm-evidence-note { background:var(--teal-light); border-radius:12px; padding:18px 20px; font-size:13.5px; color:var(--teal-dark); line-height:1.7; border-left:3px solid var(--teal); }
+  .lm-evidence-note strong { font-weight:600; display:block; margin-bottom:5px; }
+  .lm-pillars-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:2rem; }
+  .lm-pillar { background:white; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; transition:box-shadow .25s; }
+  .lm-pillar:hover { box-shadow:0 6px 22px rgba(45,125,111,0.09); }
+  .lm-pillar-head { padding:20px 20px 16px; cursor:pointer; display:flex; align-items:flex-start; gap:13px; user-select:none; }
+  .lm-pillar-icon { font-size:26px; flex-shrink:0; margin-top:1px; }
+  .lm-pillar-head-text { flex:1; }
+  .lm-pillar-name { font-family:'Playfair Display',serif; font-size:16px; font-weight:400; color:var(--text-1); margin-bottom:3px; }
+  .lm-pillar-hook { font-size:12.5px; color:var(--text-3); line-height:1.5; }
+  .lm-chevron { margin-left:auto; font-size:11px; color:var(--text-3); transition:transform .25s; flex-shrink:0; margin-top:5px; }
+  .lm-pillar.open .lm-chevron { transform:rotate(180deg); }
+  .lm-pillar-body { padding:0 20px 18px; display:none; }
+  .lm-pillar.open .lm-pillar-body { display:block; }
+  .lm-evidence-pill { display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:600; padding:3px 10px; border-radius:20px; margin-bottom:10px; text-transform:uppercase; letter-spacing:0.04em; }
+  .ev-strong { background:var(--teal-light); color:var(--teal-dark); }
+  .ev-emerging { background:var(--gold-light); color:#7a5c14; }
+  .ev-rationale { background:#f5ece6; color:#7a3018; }
+  .lm-rationale { font-size:13.5px; color:var(--text-2); line-height:1.75; margin-bottom:12px; padding-top:12px; border-top:1px solid var(--border); }
+  .lm-actions { display:flex; flex-direction:column; gap:0; }
+  .lm-action { display:flex; align-items:flex-start; gap:9px; font-size:13px; color:var(--text-2); padding:6px 0; border-bottom:1px solid var(--border); line-height:1.55; }
+  .lm-action:last-child { border-bottom:none; }
+  .lm-action-dot { width:6px; height:6px; background:var(--teal); border-radius:50%; margin-top:5px; flex-shrink:0; }
+  .lm-integrate { background:linear-gradient(135deg,var(--teal-deep),var(--teal-dark)); border-radius:var(--r); padding:32px 36px; color:white; }
+  .lm-integrate h3 { font-family:'Playfair Display',serif; font-size:21px; font-weight:400; margin-bottom:8px; }
+  .lm-integrate-lead { font-size:14.5px; opacity:.72; line-height:1.75; margin-bottom:1.75rem; max-width:580px; }
+  .lm-integrate-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .lm-step { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.13); border-radius:12px; padding:18px 18px; }
+  .lm-step-num { font-family:'Playfair Display',serif; font-size:30px; color:var(--teal-mid); opacity:.65; line-height:1; margin-bottom:9px; }
+  .lm-step-title { font-size:13.5px; font-weight:600; color:white; margin-bottom:6px; }
+  .lm-step-body { font-size:13px; color:rgba(255,255,255,0.62); line-height:1.65; }
+  @media(max-width:960px){ .lm-pillars-grid { grid-template-columns:1fr 1fr; } .lm-intro { grid-template-columns:1fr; } .lm-integrate-steps { grid-template-columns:1fr 1fr; } }
+  @media(max-width:600px){ .lm-pillars-grid { grid-template-columns:1fr; } .lm-integrate-steps { grid-template-columns:1fr; } }
+
+  /* RESEARCH */
+  #research { background:var(--warm-white); }
+  .filter-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:2rem; }
+  .f-btn { padding:7px 16px; border-radius:22px; border:1px solid var(--border); background:white; font-family:'Plus Jakarta Sans',sans-serif; font-size:13px; color:var(--text-2); cursor:pointer; transition:all .2s; }
+  .f-btn.on, .f-btn:hover { background:var(--teal); color:white; border-color:var(--teal); }
+  .study-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:16px; }
+  .study-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:24px; transition:all .25s; display:flex; flex-direction:column; }
+  .study-card:hover { box-shadow:0 8px 28px rgba(45,125,111,0.1); transform:translateY(-3px); }
+  .study-card.featured { border-color:var(--teal-mid); border-width:1.5px; }
+  .study-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:11px; }
+  .s-tag { font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.04em; }
+  .s-tag.outcomes { background:var(--teal-light); color:var(--teal-dark); }
+  .s-tag.qol { background:var(--gold-light); color:#7a5c14; }
+  .s-tag.technique { background:#eaeff8; color:#2a4480; }
+  .s-tag.lifestyle { background:#f5ece6; color:#7a3018; }
+  .study-badge { display:inline-block; font-size:10px; font-weight:600; background:var(--teal); color:white; padding:2px 9px; border-radius:20px; margin-bottom:9px; text-transform:uppercase; letter-spacing:0.05em; }
+  .study-badge.emerging { background:var(--rust); }
+  .study-badge.delphi { background:var(--teal-dark); }
+
+  /* PARTICIPATE IN RESEARCH */
+  #participate { background:var(--teal-deep); }
+  .participate-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1.2fr 0.8fr; gap:4rem; align-items:center; }
+  .participate-text .s-label { color:var(--teal-mid); }
+  .participate-text .s-title { color:white; margin-bottom:1rem; }
+  .participate-text p { font-size:15.5px; color:rgba(255,255,255,0.7); line-height:1.8; margin-bottom:1.25rem; }
+  .participate-text p strong { color:white; font-weight:600; }
+  .participate-reasons { display:flex; flex-direction:column; gap:10px; margin-top:1.5rem; }
+  .participate-reason { display:flex; align-items:flex-start; gap:12px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:14px 16px; }
+  .participate-reason-icon { font-size:20px; flex-shrink:0; margin-top:1px; }
+  .participate-reason-text { font-size:13.5px; color:rgba(255,255,255,0.75); line-height:1.6; }
+  .participate-reason-text strong { color:white; font-weight:600; display:block; margin-bottom:2px; }
+  .participate-cta-box { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:var(--r); padding:28px 28px; }
+  .participate-cta-box h3 { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; color:white; margin-bottom:10px; }
+  .participate-cta-box p { font-size:14px; color:rgba(255,255,255,0.6); line-height:1.7; margin-bottom:20px; }
+  .participate-cta-box .stat-row { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+  .participate-stat { background:rgba(255,255,255,0.1); border-radius:10px; padding:12px 16px; flex:1; min-width:90px; text-align:center; }
+  .participate-stat-num { font-family:'Playfair Display',serif; font-size:24px; color:white; line-height:1; margin-bottom:3px; }
+  .participate-stat-label { font-size:11px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.06em; }
+  .btn-participate { display:block; text-align:center; background:white; color:var(--teal-dark); padding:13px 24px; border-radius:50px; font-weight:600; font-size:15px; text-decoration:none; transition:all .25s; }
+  .btn-participate:hover { background:var(--teal-light); transform:translateY(-2px); }
+  @media(max-width:960px){ .participate-inner { grid-template-columns:1fr; } }
+
+  /* ONGOING STUDIES */
+  .ongoing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .ongoing-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:24px; display:flex; flex-direction:column; gap:0; transition:all .25s; }
+  .ongoing-card:hover { box-shadow:0 8px 28px rgba(45,125,111,0.1); transform:translateY(-3px); }
+  .pfdc-card { border-color:var(--teal-mid); border-width:1.5px; }
+  .ongoing-card-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; flex-wrap:wrap; gap:6px; }
+  .ongoing-status { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:4px 10px; border-radius:20px; }
+  .ongoing-status.active { background:#e8f5e9; color:#2e7d32; }
+  .ongoing-status.consortium { background:var(--teal-light); color:var(--teal-dark); }
+  .ongoing-scope { font-size:12px; color:var(--text-3); font-weight:400; }
+  .ongoing-title { font-family:'Playfair Display',serif; font-size:16.5px; font-weight:400; line-height:1.35; color:var(--text-1); margin-bottom:10px; }
+  .ongoing-body { font-size:13.5px; color:var(--text-2); line-height:1.7; margin-bottom:16px; }
+  .ongoing-details { display:flex; flex-direction:column; gap:0; margin-bottom:18px; flex:1; }
+  .ongoing-detail { display:flex; flex-direction:column; padding:7px 0; border-bottom:1px solid var(--border); }
+  .ongoing-detail:last-child { border-bottom:none; }
+  .od-label { font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-3); margin-bottom:2px; }
+  .od-value { font-size:13px; color:var(--text-2); line-height:1.5; }
+  .ongoing-cta { font-size:13px; font-weight:600; color:var(--teal); text-decoration:none; margin-top:auto; display:inline-flex; align-items:center; gap:4px; flex-wrap:wrap; }
+  .ongoing-cta:hover { color:var(--teal-dark); }
+  .pfdc-link { color:var(--teal-dark); }
+  .od-placeholder { font-weight:400; font-size:12px; color:var(--text-3); font-style:italic; }
+  @media(max-width:960px){ .ongoing-grid { grid-template-columns:1fr; } }
+  .study-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:400; line-height:1.4; margin-bottom:5px; color:var(--text-1); flex:1; }
+  .study-authors { font-size:12px; color:var(--text-3); margin-bottom:3px; font-style:italic; }
+  .study-journal { font-size:12px; color:var(--text-3); margin-bottom:10px; }
+  .study-abstract { font-size:13px; color:var(--text-2); line-height:1.65; margin-bottom:14px; }
+  .study-link { font-size:13px; color:var(--teal); font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px; margin-top:auto; }
+  .study-link:hover { color:var(--teal-dark); }
+
+  /* PREPARING */
+  #preparing { background:var(--warm-off); }
+  .prep-layout { display:grid; grid-template-columns:3fr 2fr; gap:3.5rem; align-items:start; }
+  .timeline { position:relative; padding-left:2.2rem; }
+  .timeline::before { content:''; position:absolute; left:12px; top:12px; bottom:12px; width:1.5px; background:linear-gradient(to bottom,var(--teal),var(--teal-mid),transparent); }
+  .tl-item { position:relative; margin-bottom:2rem; }
+  .tl-dot { position:absolute; left:-2.2rem; top:3px; width:26px; height:26px; background:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; border:3px solid var(--warm-off); font-size:11px; font-weight:700; color:white; }
+  .tl-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:20px 24px; }
+  .tl-when { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--teal); margin-bottom:6px; }
+  .tl-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:400; margin-bottom:8px; }
+  .tl-body { font-size:14px; color:var(--text-2); line-height:1.7; margin-bottom:12px; }
+  .tl-tips { display:flex; flex-direction:column; gap:6px; }
+  .tl-tip { font-size:13px; color:var(--text-2); background:var(--warm-off); border-radius:7px; padding:7px 12px; border-left:2.5px solid var(--teal-mid); line-height:1.55; }
+  .checklist-card { background:white; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; position:sticky; top:88px; }
+  .cl-head { background:var(--teal-deep); padding:16px 22px; color:white; font-family:'Playfair Display',serif; font-size:17px; font-weight:400; }
+  .cl-sub { font-size:12px; opacity:.6; font-family:'Plus Jakarta Sans',sans-serif; font-weight:400; margin-top:2px; }
+  .cl-body { padding:14px 18px; }
+  .cl-item { display:flex; align-items:flex-start; gap:11px; padding:9px 0; border-bottom:1px solid var(--border); font-size:13.5px; color:var(--text-2); }
+  .cl-item:last-child { border-bottom:none; }
+  .cl-box { width:20px; height:20px; border-radius:5px; border:1.5px solid var(--teal-mid); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; cursor:pointer; transition:all .2s; font-size:11px; color:white; }
+  .cl-box.done { background:var(--teal); border-color:var(--teal); }
+  .cl-progress { padding:14px 18px 16px; border-top:1px solid var(--border); }
+  .cl-prog-label { font-size:12px; color:var(--text-3); margin-bottom:8px; display:flex; justify-content:space-between; }
+  .cl-bar { height:6px; background:var(--teal-light); border-radius:3px; overflow:hidden; }
+  .cl-fill { height:100%; background:var(--teal); border-radius:3px; transition:width .4s ease; width:0%; }
+
+  /* LIFE AFTER */
+  #life-after { background:var(--warm-white); }
+  .recovery-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-bottom:2.5rem; }
+  .rec-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:24px; }
+  .rec-phase { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--rust); margin-bottom:5px; }
+  .rec-title { font-family:'Playfair Display',serif; font-size:19px; font-weight:400; margin-bottom:9px; }
+  .rec-body { font-size:14px; color:var(--text-2); line-height:1.75; margin-bottom:14px; }
+  .rec-markers { display:flex; flex-direction:column; gap:6px; }
+  .rec-marker { display:flex; align-items:center; gap:9px; font-size:13px; color:var(--text-2); }
+  .rm-dot { width:8px; height:8px; border-radius:50%; background:var(--teal-mid); flex-shrink:0; }
+  .rm-dot.on { background:var(--teal); }
+  .lifestyle-panel { background:var(--teal-light); border-radius:var(--r); padding:34px 38px; display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  .lifestyle-panel h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; margin-bottom:14px; grid-column:1/-1; color:var(--teal-dark); }
+  .lp-col h4 { font-weight:600; font-size:14px; margin-bottom:9px; color:var(--teal-dark); }
+  .lp-col ul { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .lp-col li { font-size:13.5px; color:var(--text-2); padding-left:15px; position:relative; }
+  .lp-col li::before { content:'·'; position:absolute; left:4px; color:var(--teal); font-size:18px; line-height:1.2; }
+
+  /* CONTACT */
+  #contact { background:var(--teal-deep); }
+  .contact-inner { max-width:640px; margin:0 auto; text-align:center; }
+  .contact-inner .s-label { color:var(--teal-mid); }
+  .contact-inner .s-title { color:white; }
+  .contact-inner .s-lead { color:rgba(255,255,255,0.65); margin:0 auto 2.5rem; }
+  .contact-actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:2rem; }
+  .contact-note { font-size:13px; color:rgba(255,255,255,0.35); line-height:1.65; max-width:420px; margin:0 auto; }
+
+  /* FOOTER */
+  footer { background:var(--teal-deep); border-top:1px solid rgba(255,255,255,0.08); padding:3rem 2.5rem; }
+  .footer-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; }
+  .footer-brand-name { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; color:white; letter-spacing:0.1em; margin-bottom:12px; }
+  .footer-brand-tag { font-size:12px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; }
+  .footer-brand p { font-size:13.5px; color:rgba(255,255,255,0.5); line-height:1.7; max-width:300px; }
+  .footer-col h4 { font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.35); margin-bottom:14px; }
+  .footer-col a { display:block; color:rgba(255,255,255,0.6); text-decoration:none; font-size:13.5px; padding:4px 0; transition:color .2s; }
+  .footer-col a:hover { color:white; }
+  .footer-bottom { max-width:1140px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; font-size:12px; color:rgba(255,255,255,0.3); flex-wrap:wrap; gap:8px; }
+
+  /* MODAL */
+  .overlay { display:none; position:fixed; inset:0; background:rgba(15,53,48,0.78); backdrop-filter:blur(10px); z-index:1000; align-items:center; justify-content:center; padding:1rem; }
+  .overlay.open { display:flex; }
+  .modal-box { background:white; border-radius:22px; max-width:720px; width:100%; padding:1.75rem; position:relative; max-height:90vh; overflow-y:auto; }
+  .modal-x { position:absolute; top:14px; right:14px; width:34px; height:34px; border:none; background:var(--warm-off); border-radius:50%; cursor:pointer; font-size:18px; color:var(--text-2); display:flex; align-items:center; justify-content:center; z-index:10; transition:background .2s; }
+  .modal-x:hover { background:var(--cream); }
+  .modal-video-wrap { width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; margin-bottom:1.5rem; background:var(--warm-off); position:relative; }
+  .modal-video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+  .modal-placeholder { width:100%; aspect-ratio:16/9; border-radius:14px; background:var(--warm-off); border:2px dashed var(--teal-mid); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; margin-bottom:1.5rem; }
+  .modal-placeholder p { color:var(--text-3); font-size:14px; }
+  .modal-box h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; margin-bottom:8px; padding-right:2.5rem; }
+  .modal-box p { color:var(--text-2); font-size:15px; line-height:1.75; }
+
+  /* MOBILE MENU */
+  .mob-menu { display:none; position:fixed; top:68px; left:0; right:0; background:var(--warm-white); border-bottom:1px solid var(--border); padding:1rem 1.5rem; z-index:150; flex-direction:column; gap:4px; }
+  .mob-menu.open { display:flex; }
+  .mob-menu a { padding:10px 12px; color:var(--text-2); text-decoration:none; font-size:15px; border-radius:8px; transition:background .2s; }
+  .mob-menu a:hover { background:var(--teal-light); color:var(--teal-dark); }
+
+  /* TOOLS & SCORES */
+  #tools { background:var(--warm-white); }
+  .tools-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:2rem; }
+  .tool-tab { padding:9px 20px; border-radius:24px; border:1.5px solid var(--border); background:white; font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; font-weight:500; color:var(--text-2); cursor:pointer; transition:all .2s; }
+  .tool-tab.active { background:var(--teal); color:white; border-color:var(--teal); }
+  .tool-panel { display:none; }
+  .tool-panel.active { display:block; }
+  .tool-layout { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+  .tool-form-card { background:white; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; }
+  .tool-form-head { background:var(--teal-deep); padding:18px 24px; color:white; }
+  .tool-form-head h3 { font-family:'Playfair Display',serif; font-size:19px; font-weight:400; margin-bottom:3px; }
+  .tool-form-head p { font-size:12.5px; opacity:.65; }
+  .tool-questions { padding:0 24px; }
+  .tool-q { border-bottom:1px solid var(--border); padding:14px 0; }
+  .tool-q:last-child { border-bottom:none; }
+  .tool-q-label { font-size:13.5px; font-weight:500; color:var(--text-1); margin-bottom:10px; line-height:1.5; }
+  .tool-q-options { display:flex; flex-wrap:wrap; gap:6px; }
+  .tool-q-option { padding:5px 12px; border-radius:20px; border:1.5px solid var(--border); background:white; font-family:'Plus Jakarta Sans',sans-serif; font-size:12.5px; color:var(--text-2); cursor:pointer; transition:all .18s; user-select:none; }
+  .tool-q-option:hover { border-color:var(--teal-mid); color:var(--teal-dark); }
+  .tool-q-option.sel { background:var(--teal); color:white; border-color:var(--teal); font-weight:500; }
+  .tool-footer { padding:18px 24px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .tool-reset { font-size:13px; color:var(--text-3); background:none; border:none; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; transition:color .2s; }
+  .tool-reset:hover { color:var(--rust); }
+  .tool-score-display { background:white; border:1px solid var(--border); border-radius:var(--r); padding:28px; }
+  .tool-score-num { font-family:'Playfair Display',serif; font-size:64px; font-weight:400; line-height:1; margin-bottom:4px; transition:color .4s; }
+  .tool-score-label { font-size:13px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:16px; transition:color .4s; }
+  .tool-score-bar-wrap { height:10px; background:var(--warm-off); border-radius:5px; overflow:hidden; margin-bottom:20px; }
+  .tool-score-bar { height:100%; border-radius:5px; transition:width .5s ease, background .4s; }
+  .tool-score-interp { font-size:14px; color:var(--text-2); line-height:1.75; padding:14px 16px; border-radius:10px; margin-bottom:16px; border-left:3px solid; transition:background .4s, border-color .4s; }
+  .tool-score-disclaimer { font-size:12px; color:var(--text-3); line-height:1.6; }
+  .tool-about { margin-top:1.5rem; background:var(--warm-off); border-radius:var(--r); padding:20px 22px; }
+  .tool-about h4 { font-family:'Playfair Display',serif; font-size:16px; font-weight:400; margin-bottom:8px; }
+  .tool-about p { font-size:13px; color:var(--text-2); line-height:1.7; }
+
+  /* SURGICAL RISKS */
+  #risks { background:var(--warm-off); }
+  .risks-intro { max-width:680px; margin-bottom:2.5rem; }
+  .risks-intro p { font-size:15px; color:var(--text-2); line-height:1.8; margin-bottom:1rem; }
+  .risks-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-bottom:2rem; }
+  .risk-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:24px; }
+  .risk-card-title { font-family:'Playfair Display',serif; font-size:17px; font-weight:400; margin-bottom:14px; color:var(--text-1); display:flex; align-items:center; gap:10px; }
+  .risk-card-icon { font-size:20px; }
+  .risk-item { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:8px 0; border-bottom:1px solid var(--border); font-size:13.5px; }
+  .risk-item:last-child { border-bottom:none; }
+  .risk-name { color:var(--text-2); flex:1; line-height:1.5; }
+  .risk-rate { font-weight:600; color:var(--text-1); white-space:nowrap; font-size:13px; }
+  .risk-rate.low { color:#2e7d32; }
+  .risk-rate.mod { color:var(--rust); }
+  .risk-rate.varies { color:var(--teal-dark); }
+  .risks-note { background:white; border:1px solid var(--border); border-radius:var(--r); padding:22px 26px; display:flex; gap:14px; align-items:flex-start; margin-bottom:2rem; }
+  .risks-note-icon { font-size:22px; flex-shrink:0; }
+  .risks-note p { font-size:13.5px; color:var(--text-2); line-height:1.75; }
+  .risks-note strong { font-weight:600; color:var(--text-1); }
+
+  /* RECURRENCE FACTORS */
+  .recurrence-section { margin-top:2.5rem; }
+  .recurrence-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:1.5rem; }
+  .rf-card { background:white; border:1px solid var(--border); border-radius:var(--r); padding:22px; }
+  .rf-card-head { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .rf-badge { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; padding:3px 10px; border-radius:20px; }
+  .rf-badge.higher { background:#fce8e8; color:#a32d2d; }
+  .rf-badge.lower { background:var(--teal-light); color:var(--teal-dark); }
+  .rf-badge.modifiable { background:var(--gold-light); color:#7a5c14; }
+  .rf-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:400; }
+  .rf-items { display:flex; flex-direction:column; gap:6px; }
+  .rf-item { display:flex; align-items:flex-start; gap:8px; font-size:13px; color:var(--text-2); line-height:1.55; }
+  .rf-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; margin-top:5px; }
+  .rf-dot.higher { background:#c62828; }
+  .rf-dot.lower { background:var(--teal); }
+  .rf-dot.modifiable { background:var(--gold); }
+  .recurrence-caveat { margin-top:1.5rem; background:var(--teal-light); border-radius:var(--r); padding:18px 22px; font-size:13.5px; color:var(--teal-dark); line-height:1.7; border-left:3px solid var(--teal); }
+
+  @media(max-width:960px){ .tool-layout,.risks-grid,.recurrence-grid { grid-template-columns:1fr; } }
+
+  /* RISK CALCULATOR */
+  #calculator { background:var(--warm-off); }
+  .calc-disclaimer { background:var(--gold-light); border:1px solid rgba(196,154,60,0.25); border-left:3px solid var(--gold); border-radius:var(--r); padding:16px 20px; margin-bottom:2rem; font-size:13.5px; color:#5a4010; line-height:1.7; }
+  .calc-disclaimer strong { font-weight:600; }
+  .calc-tabs { display:flex; gap:8px; margin-bottom:2rem; }
+  .calc-tab { padding:9px 24px; border-radius:24px; border:1.5px solid var(--border); background:white; font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; font-weight:500; color:var(--text-2); cursor:pointer; transition:all .2s; }
+  .calc-tab.active { background:var(--teal); color:white; border-color:var(--teal); }
+  .calc-panel { display:none; }
+  .calc-panel.active { display:block; }
+  .calc-layout { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; align-items:start; }
+  .calc-form { background:white; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; }
+  .calc-form-head { background:var(--teal-deep); padding:18px 24px; }
+  .calc-form-head h3 { font-family:'Playfair Display',serif; font-size:18px; font-weight:400; color:white; margin-bottom:3px; }
+  .calc-form-head p { font-size:12px; color:rgba(255,255,255,0.6); }
+  .calc-fields { padding:4px 0; }
+  .calc-field { padding:13px 22px; border-bottom:1px solid var(--border); }
+  .calc-field:last-child { border-bottom:none; }
+  .calc-field-label { font-size:13px; font-weight:600; color:var(--text-1); margin-bottom:8px; }
+  .calc-field-sub { font-size:11.5px; font-weight:400; color:var(--text-3); margin-bottom:8px; display:block; }
+  .calc-options { display:flex; flex-wrap:wrap; gap:6px; }
+  .calc-opt { padding:5px 13px; border-radius:20px; border:1.5px solid var(--border); background:white; font-family:'Plus Jakarta Sans',sans-serif; font-size:12.5px; color:var(--text-2); cursor:pointer; transition:all .18s; user-select:none; }
+  .calc-opt:hover { border-color:var(--teal-mid); color:var(--teal-dark); }
+  .calc-opt.on { background:var(--teal); color:white; border-color:var(--teal); font-weight:500; }
+  .calc-footer { padding:14px 22px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+  .calc-reset-btn { font-size:13px; color:var(--text-3); background:none; border:none; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif; }
+  .calc-reset-btn:hover { color:var(--rust); }
+  .calc-prog-txt { font-size:12px; color:var(--text-3); }
+  .calc-result { background:white; border:1px solid var(--border); border-radius:var(--r); padding:26px; position:sticky; top:88px; }
+  .calc-waiting { text-align:center; padding:2rem 1rem; }
+  .calc-waiting-icon { font-size:40px; margin-bottom:12px; }
+  .calc-waiting p { font-size:14px; color:var(--text-3); line-height:1.65; }
+  .calc-output { display:none; }
+  .calc-risk-badge { display:inline-block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 16px; border-radius:24px; margin-bottom:14px; }
+  .rl { background:#e8f5e9; color:#1b5e20; }
+  .rm { background:#fff3e0; color:#bf360c; }
+  .rh { background:#fce8e8; color:#a32d2d; }
+  .calc-risk-title { font-family:'Playfair Display',serif; font-size:21px; font-weight:400; margin-bottom:10px; color:var(--text-1); }
+  .calc-risk-body { font-size:13.5px; color:var(--text-2); line-height:1.75; margin-bottom:16px; }
+  .calc-factors-box { background:var(--warm-off); border-radius:10px; padding:14px 16px; margin-bottom:14px; }
+  .calc-factors-lbl { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-3); margin-bottom:8px; }
+  .calc-fi { display:flex; align-items:flex-start; gap:8px; font-size:13px; color:var(--text-2); padding:4px 0; line-height:1.5; }
+  .calc-fd { width:6px; height:6px; border-radius:50%; flex-shrink:0; margin-top:5px; }
+  .fd-r { background:#c62828; }
+  .fd-a { background:#ef6c00; }
+  .fd-g { background:#2e7d32; }
+  .calc-disc { font-size:12px; color:var(--text-3); line-height:1.6; border-top:1px solid var(--border); padding-top:12px; margin-top:4px; }
+  @media(max-width:960px){ .calc-layout { grid-template-columns:1fr; } .calc-result { position:static; } }
+
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s ease,transform .65s ease; }
+  .reveal.vis { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media(max-width:960px){
+    .hero-inner,.what-grid { grid-template-columns:1fr; }
+    .hero-cards { flex-direction:row; flex-wrap:wrap; }
+    .hero-card { flex:1 1 200px; }
+    .treat-grid,.prep-layout,.recovery-grid { grid-template-columns:1fr; }
+    .lifestyle-panel { grid-template-columns:1fr; }
+    .lifestyle-panel h3 { grid-column:1; }
+    .footer-inner { grid-template-columns:1fr 1fr; }
+    .footer-brand { grid-column:1/-1; }
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+  }
+  @media(max-width:600px){
+    section { padding:4rem 1.5rem; }
+    .philosophy-strip { flex-direction:column; }
+    .footer-inner { grid-template-columns:1fr; }
+    .footer-bottom { flex-direction:column; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo-wrap" href="#hero">
+    <div class="logo-mark">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 14 5 14 10C14 13 12 16 10 18C8 16 6 13 6 10C6 5 10 2 10 2Z" stroke="white" stroke-width="1.4" fill="none" stroke-linejoin="round"/><path d="M6 10C6 10 8 8 10 10C12 12 14 10 14 10" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+    </div>
+    <div class="logo-text-wrap">
+      <span class="logo-name">RENEW</span>
+      <span class="logo-sub">Bowel Health &amp; Prolapse</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#what-is">What is prolapse?</a></li>
+    <li><a href="#testing">Testing</a></li>
+    <li><a href="#treatment">Treatment</a></li>
+    <li><a href="#tools">Symptom scores</a></li>
+    <li><a href="#risks">Surgical risks</a></li>
+    <li><a href="#calculator">Risk calculator</a></li>
+    <li><a href="#preparing">Preparing</a></li>
+    <li><a href="#life-after">Life after</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#participate">Participate</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#what-is" onclick="toggleMob()">What is prolapse?</a>
+  <a href="#testing" onclick="toggleMob()">Diagnostic testing</a>
+  <a href="#treatment" onclick="toggleMob()">Treatment options</a>
+  <a href="#tools" onclick="toggleMob()">Symptom scores</a>
+  <a href="#risks" onclick="toggleMob()">Surgical risks</a>
+  <a href="#calculator" onclick="toggleMob()">Risk calculator</a>
+  <a href="#preparing" onclick="toggleMob()">Preparing for surgery</a>
+  <a href="#life-after" onclick="toggleMob()">Life after surgery</a>
+  <a href="#research" onclick="toggleMob()">Our research</a>
+  <a href="#participate" onclick="toggleMob()">Participate in research</a>
+  <a href="#contact" onclick="toggleMob()">Get in touch</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div><div class="hero-texture"></div><div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span></span>Patient Education Resource</div>
+      <h1 class="hero-title">Bowel health, rectal prolapse &amp; <em>pelvic floor surgery</em></h1>
+      <div class="hero-subtitle-line"><span class="hero-tag">Openly. Clearly. Without shame.</span></div>
+      <p class="hero-sub">A trusted resource for patients living with rectal prolapse — from understanding your diagnosis through conservative treatment, surgery, and long-term recovery.</p>
+      <div class="hero-actions">
+        <a href="#what-is" class="btn-primary">Start here</a>
+        <a href="#research" class="btn-ghost">Our research</a>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card"><div class="hero-card-icon">🎬</div><div><div class="hero-card-label">Animations</div><div class="hero-card-value">3 patient videos</div></div></div>
+      <div class="hero-card"><div class="hero-card-icon">📄</div><div><div class="hero-card-label">Research</div><div class="hero-card-value">12 studies &amp; presentations</div></div></div>
+      <div class="hero-card"><div class="hero-card-icon">🌿</div><div><div class="hero-card-label">Our approach</div><div class="hero-card-value">Lifestyle before surgery</div></div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Scroll to explore</div>
+</section>
+
+<!-- WHAT IS -->
+<section id="what-is">
+  <div class="section-inner">
+    <div class="what-grid">
+      <div class="what-text reveal">
+        <span class="s-label">Understanding your condition</span>
+        <h2 class="s-title">What is rectal prolapse?</h2>
+        <p>Rectal prolapse occurs when part or all of the rectum — the last section of the large intestine — slips outside the anus. It can be a distressing and uncomfortable condition, but it is more common than many people realise, and there are effective treatments available.</p>
+        <p>Prolapse is often the result of weakness in the muscles and ligaments that support the pelvic floor. Contributing factors include chronic straining, constipation, aging, and prior childbirth — but it is nobody's fault, and it is nothing to be ashamed of.</p>
+        <p>Our research has shown that rectal prolapse presents differently between patients — from symptoms that occur only during defecation to prolapse that happens spontaneously throughout the day. Understanding your specific presentation helps guide the right treatment for you.</p>
+        <p>For many women, symptoms first appear or noticeably worsen during perimenopause or menopause. This is not a coincidence — estrogen plays a direct role in maintaining the strength and elasticity of connective tissue throughout the pelvic floor. As estrogen levels decline, that support can weaken, making existing prolapse more symptomatic or allowing new prolapse to develop. If your symptoms changed around this time in your life, it is worth mentioning to your clinical team — there are hormonal options, including vaginal estrogen, worth exploring.</p>
+        <div class="symptom-box">
+          <h4>Common symptoms</h4>
+          <div class="symptom-row"><div class="s-dot"></div>Tissue or a bulge protruding from the anus</div>
+          <div class="symptom-row"><div class="s-dot"></div>Feeling of incomplete bowel emptying</div>
+          <div class="symptom-row"><div class="s-dot"></div>Mucus or blood on toilet paper or in stool</div>
+          <div class="symptom-row"><div class="s-dot"></div>Fecal incontinence or urgency</div>
+          <div class="symptom-row"><div class="s-dot"></div>Discomfort, pressure, or pain in the pelvic area</div>
+          <div class="symptom-row"><div class="s-dot"></div>Constipation or difficulty with bowel movements</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="anim-label">Watch our animations</p>
+        <div class="anim-stack">
+          <div class="anim-card" onclick="openModal('prolapse')">
+            <div class="anim-thumb at-1"><div class="play-ring"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3L13 8L5 13V3Z" fill="var(--teal)"/></svg></div></div>
+            <div class="anim-body"><div class="anim-title">Prolapse &amp; Incontinence</div><div class="anim-desc">How rectal prolapse develops and what it means for bowel control</div></div>
+          </div>
+          <div class="anim-card" onclick="openModal('bowel')">
+            <div class="anim-thumb at-2"><div class="play-ring"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3L13 8L5 13V3Z" fill="var(--rust)"/></svg></div></div>
+            <div class="anim-body"><div class="anim-title">Bowel Health &amp; Constipation</div><div class="anim-desc">Fiber, straining, posture, and your daily bowel habits explained</div></div>
+          </div>
+          <div class="anim-card" onclick="openModal('rectopexy')">
+            <div class="anim-thumb at-3"><div class="play-ring"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3L13 8L5 13V3Z" fill="#3a5cb8"/></svg></div></div>
+            <div class="anim-body"><div class="anim-title">Rectopexy Surgery</div><div class="anim-desc">What happens during laparoscopic rectopexy, step by step</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MDT CALLOUT -->
+    <div class="mdt-callout reveal">
+      <div class="mdt-callout-left">
+        <div class="mdt-icon">🔗</div>
+        <div>
+          <div class="mdt-callout-title">Rectal prolapse rarely travels alone</div>
+          <p class="mdt-callout-body">Approximately <strong>1 in 3 women with rectal prolapse</strong> also have vaginal prolapse or urinary incontinence. These conditions share the same underlying cause — a weakened pelvic floor — and often need to be assessed and treated together. If you have symptoms involving your bladder or vagina alongside bowel symptoms, this is not unusual and it is important to mention. A multidisciplinary team approach, bringing together colorectal surgery, urogynecology, and pelvic floor physiotherapy, typically produces the best outcomes for complex pelvic floor presentations.</p>
+        </div>
+      </div>
+      <div class="mdt-callout-right">
+        <div class="mdt-team-item"><div class="mdt-team-dot"></div><div><strong>Colorectal surgery</strong><span>Rectal prolapse, bowel dysfunction, rectopexy</span></div></div>
+        <div class="mdt-team-item"><div class="mdt-team-dot"></div><div><strong>Urogynecology &amp; female urology</strong><span>Vaginal prolapse, urinary incontinence, bladder dysfunction</span></div></div>
+        <div class="mdt-team-item"><div class="mdt-team-dot"></div><div><strong>Pelvic floor physiotherapy</strong><span>Muscle function, coordination, conservative care</span></div></div>
+        <div class="mdt-team-item"><div class="mdt-team-dot"></div><div><strong>Gastroenterology</strong><span>Bowel motility, defecation disorders</span></div></div>
+        <div class="mdt-team-item"><div class="mdt-team-dot"></div><div><strong>Women's health / menopause</strong><span>Hormonal optimisation, vaginal estrogen</span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIAGNOSTIC TESTING -->
+<section id="testing">
+  <div class="section-inner">
+    <span class="s-label">Understanding your workup</span>
+    <h2 class="s-title reveal">Diagnostic testing</h2>
+    <div class="testing-intro reveal">
+      <p>Not every patient with rectal prolapse needs extensive testing. Many diagnoses are made on clinical history and physical examination alone. When we do order investigations, it is because the result will change what we recommend — not because testing is routine.</p>
+      <p>The three tests described below are used selectively, based on your specific symptoms, examination findings, and what questions need answering before we can plan the right treatment for you. If a test has been recommended, this page explains what it is, what it looks for, and what to expect.</p>
+    </div>
+
+    <div class="testing-grid reveal">
+
+      <!-- MRI Defecography -->
+      <div class="test-card">
+        <div class="test-icon">🧲</div>
+        <div class="test-name">MRI Defecography</div>
+        <div class="test-abbr">Dynamic MRI · Defecating proctogram</div>
+        <p class="test-body">MRI defecography is an imaging study that captures how your pelvic floor moves during defecation — in real time. Unlike a standard MRI which produces static images, this study asks you to evacuate a gel while the scanner records what happens to the rectum, pelvic floor, and surrounding structures during straining and emptying.</p>
+        <div class="test-what">
+          <div class="test-what-label">What it shows</div>
+          <div class="test-what-body">The degree of rectal prolapse or intussusception; pelvic floor descent; whether other compartments (bladder, uterus, vagina) prolapse simultaneously; how well the rectum empties; and whether dyssynergic defecation is present — where the pelvic floor fails to relax during a bowel movement.</div>
+        </div>
+        <div class="test-what">
+          <div class="test-what-label">What to expect</div>
+          <div class="test-what-body">The study is performed in an MRI scanner. A small amount of gel is placed in the rectum beforehand. You will be asked to squeeze, strain, and then evacuate during the scan. It is not painful, but some patients find it uncomfortable or embarrassing. The team performing it are experienced and understand this.</div>
+        </div>
+        <span class="test-selective">✓ Used selectively</span>
+      </div>
+
+      <!-- Dynamic Ultrasound -->
+      <div class="test-card">
+        <div class="test-icon">🔊</div>
+        <div class="test-name">Dynamic Pelvic Ultrasound</div>
+        <div class="test-abbr">Transperineal or endoanal ultrasound</div>
+        <p class="test-body">Ultrasound uses sound waves to produce real-time images of pelvic floor structures. Dynamic ultrasound — performed at the perineum or endoanally — allows us to assess the anal sphincter, rectal wall, and surrounding pelvic floor both at rest and during movement. It is a point-of-care tool that can be performed in the clinic.</p>
+        <div class="test-what">
+          <div class="test-what-label">What it shows</div>
+          <div class="test-what-body">Sphincter integrity and any defects that may explain incontinence; rectal wall thickness; pelvic floor mobility during straining; and structural abnormalities of the anal canal. It is particularly useful for assessing fecal incontinence and sphincter injury alongside prolapse.</div>
+        </div>
+        <div class="test-what">
+          <div class="test-what-label">What to expect</div>
+          <div class="test-what-body">Transperineal ultrasound involves a probe placed gently on the skin between the legs — similar to an obstetric ultrasound. Endoanal ultrasound involves a small probe placed just inside the anus. Both are brief, safe, and well tolerated. No bowel preparation is needed.</div>
+        </div>
+        <span class="test-selective">✓ Used selectively</span>
+      </div>
+
+      <!-- Anorectal Manometry -->
+      <div class="test-card">
+        <div class="test-icon">📊</div>
+        <div class="test-name">Anorectal Manometry</div>
+        <div class="test-abbr">ARM · Pressure testing of the anorectum</div>
+        <p class="test-body">Anorectal manometry measures the pressures generated by the muscles of the rectum and anal canal. It gives us a detailed picture of how the sphincter muscles are functioning — both at rest and during squeeze — and whether the coordination between the rectum and pelvic floor is normal during defecation.</p>
+        <div class="test-what">
+          <div class="test-what-label">What it shows</div>
+          <div class="test-what-body">Resting and squeeze anal sphincter pressures; rectal sensation thresholds; the rectoanal inhibitory reflex; and critically, whether dyssynergic defecation is present — a pattern where the sphincter paradoxically contracts rather than relaxing during straining, which is a key target for pelvic floor physiotherapy and biofeedback.</div>
+        </div>
+        <div class="test-what">
+          <div class="test-what-label">What to expect</div>
+          <div class="test-what-body">A thin, flexible catheter with pressure sensors is placed gently into the rectum. You will be asked to squeeze, push, and cough at various points during the test. It takes approximately 20–30 minutes. It is not painful, though some patients find it slightly uncomfortable. A small enema may be given beforehand.</div>
+        </div>
+        <span class="test-selective">✓ Used selectively</span>
+      </div>
+
+    </div>
+
+    <div class="testing-note reveal">
+      <div class="testing-note-icon">💡</div>
+      <p><strong>A note on selective testing.</strong> We do not order investigations out of habit. Each test listed here is used when the result will meaningfully change our recommendation — for example, identifying dyssynergic defecation before recommending surgery, or assessing sphincter integrity before planning a repair. If a test has been recommended for you, it is because we believe the answer will help us help you better. If you are unsure why a test has been ordered, please ask — you deserve a clear explanation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENT -->
+<section id="treatment">
+  <div class="section-inner">
+    <span class="s-label">Your options</span>
+    <h2 class="s-title reveal">Treatment options</h2>
+    <p class="s-lead reveal">We believe surgery is the last resort — not the first answer. Here is how we approach treatment, from lifestyle optimisation through to surgical repair.</p>
+
+    <div class="treat-grid reveal">
+      <div class="treat-card c1">
+        <div class="treat-icon">🌿</div>
+        <div class="treat-step s1">First line</div>
+        <h3 class="treat-title">Lifestyle &amp; conservative care</h3>
+        <p class="treat-body">For many patients, meaningful improvement comes from dietary and lifestyle changes alone. This is always where we start — and where you have the most power.</p>
+        <ul class="treat-list">
+          <li>High-fiber diet (30g/day target)</li>
+          <li>Hydration and bowel habit training</li>
+          <li>Correct toilet posture (squat position)</li>
+          <li>Avoiding straining at stool</li>
+          <li>Weight management where relevant</li>
+        </ul>
+      </div>
+      <div class="treat-card c2">
+        <div class="treat-icon">🧘</div>
+        <div class="treat-step s2">Second line</div>
+        <h3 class="treat-title">Pelvic floor physiotherapy</h3>
+        <p class="treat-body">A specialist pelvic floor physiotherapist strengthens the muscles supporting your rectum and improves coordination, control, and continence. A multi-society consensus — including ASCRS, ICS, and APTA — now supports this as a core part of treatment.</p>
+        <ul class="treat-list">
+          <li>Pelvic floor muscle training</li>
+          <li>Biofeedback therapy</li>
+          <li>Defecation retraining</li>
+          <li>Managing incontinence symptoms</li>
+        </ul>
+      </div>
+      <div class="treat-card c3">
+        <div class="treat-icon">🔬</div>
+        <div class="treat-step s3">When indicated</div>
+        <h3 class="treat-title">Surgical repair</h3>
+        <p class="treat-body">When prolapse is significant and conservative measures have not provided adequate relief, surgery offers durable repair. Our research shows surgery improves bowel symptoms across a wide range of patients. The right approach depends on your anatomy, symptoms, health, and preferences.</p>
+        <ul class="treat-list">
+          <li><strong style="font-weight:600;color:var(--text-1)">Rectopexy</strong> — the rectum is lifted and secured; performed laparoscopically (keyhole) or with robotic assistance</li>
+          <li><strong style="font-weight:600;color:var(--text-1)">Ventral mesh rectopexy</strong> — rectopexy using synthetic or biologic mesh to reinforce the repair. Synthetic mesh provides strong durable support; biologic graft is an alternative for patients where synthetic mesh is a concern. The choice depends on individual factors and is discussed with your surgeon</li>
+          <li><strong style="font-weight:600;color:var(--text-1)">Posterior suture rectopexy</strong> — rectopexy without mesh, for patients who prefer to avoid it</li>
+          <li><strong style="font-weight:600;color:var(--text-1)">Resection rectopexy</strong> — rectopexy combined with removal of a portion of the colon, when indicated</li>
+          <li><strong style="font-weight:600;color:var(--text-1)">Perineal procedures</strong> — surgery performed through the perineum (Altemeier, Delorme); an option for higher-risk patients</li>
+          <li><strong style="font-weight:600;color:var(--text-1)">Concomitant repair</strong> — when vaginal prolapse or urinary incontinence is present alongside rectal prolapse, combined repair with urogynecology or female urology may be appropriate and is discussed as part of multidisciplinary planning</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LIFESTYLE MEDICINE PILLARS -->
+    <div class="lm-divider reveal">
+      <div class="lm-divider-line"></div>
+      <span class="lm-divider-label">Lifestyle medicine &amp; prolapse</span>
+      <div class="lm-divider-line"></div>
+    </div>
+
+    <div class="lm-intro reveal">
+      <div class="lm-intro-text">
+        <h3>Why your whole life matters — not just your bowel</h3>
+        <p>Lifestyle medicine is a clinical discipline that uses evidence-based behavioural interventions — nutrition, movement, sleep, stress management, substance avoidance, and social connection — as the primary treatment for chronic disease. These same pillars have a direct biological rationale for pelvic floor health and prolapse.</p>
+        <p>We present each pillar honestly: where the evidence is strong, we say so. Where it is emerging or extrapolated from related conditions, we say that too. Our goal is to give you the full picture — not false certainty.</p>
+      </div>
+      <div class="lm-evidence-note">
+        <strong>A note on evidence</strong>
+        Direct clinical trials applying lifestyle medicine to rectal prolapse are limited. The strongest evidence exists for pelvic floor physiotherapy and exercise. For other pillars, we draw on biological rationale and evidence from related pelvic floor and bowel conditions — and invite you into this frontier as an informed, active participant in your own care.
+      </div>
+    </div>
+
+    <div class="lm-pillars-grid reveal">
+
+      <!-- Pillar 1: Nutrition -->
+      <div class="lm-pillar" onclick="togglePillar(this)">
+        <div class="lm-pillar-head">
+          <div class="lm-pillar-icon">🥗</div>
+          <div class="lm-pillar-head-text">
+            <div class="lm-pillar-name">Nutrition &amp; fiber</div>
+            <div class="lm-pillar-hook">Your diet shapes your bowel — and your pelvic floor</div>
+          </div>
+          <div class="lm-chevron">▼</div>
+        </div>
+        <div class="lm-pillar-body">
+          <span class="lm-evidence-pill ev-strong">Strong evidence</span>
+          <p class="lm-rationale">Chronic straining is one of the leading contributors to rectal prolapse and pelvic floor damage over time. Straining is almost always a consequence of hard, infrequent stool — which is itself a consequence of insufficient fiber and fluid. A high-fiber diet softens stool, reduces transit time, and directly lowers the mechanical load on pelvic floor structures with every bowel movement. Fermented foods support gut microbiome diversity, which influences motility and stool consistency. Anti-inflammatory eating may reduce systemic inflammation that affects connective tissue integrity — the very tissue that holds the rectum in place.</p>
+          <div class="lm-actions">
+            <div class="lm-action"><div class="lm-action-dot"></div>Target 25–30g of fiber daily from whole food sources — vegetables, legumes, fruit, whole grains</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Drink 1.5–2L of water daily — fiber without fluid can worsen constipation</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Include fermented foods regularly — yoghurt, kefir, kimchi, sauerkraut, miso</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Reduce ultra-processed foods, which are low in fiber and high in additives that disrupt gut motility</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Never ignore the urge to defecate — delayed emptying increases straining</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Movement -->
+      <div class="lm-pillar" onclick="togglePillar(this)">
+        <div class="lm-pillar-head">
+          <div class="lm-pillar-icon">🚶</div>
+          <div class="lm-pillar-head-text">
+            <div class="lm-pillar-name">Physical activity &amp; movement</div>
+            <div class="lm-pillar-hook">Movement drives motility. Targeted exercise rebuilds support</div>
+          </div>
+          <div class="lm-chevron">▼</div>
+        </div>
+        <div class="lm-pillar-body">
+          <span class="lm-evidence-pill ev-strong">Strong evidence for PFPT &amp; exercise</span>
+          <p class="lm-rationale">Physical activity stimulates bowel motility through direct mechanical effects and through autonomic nervous system regulation — regular movement is one of the most reliable treatments for constipation. Pelvic floor physical therapy (PFPT) has the strongest evidence base of any lifestyle intervention for prolapse and bowel dysfunction, supported by multi-society consensus. Beyond PFPT, core stability and low-impact aerobic exercise support the muscular and connective tissue environment of the pelvic floor. High-impact activity and heavy lifting that increases intra-abdominal pressure should be approached carefully and ideally guided by a physiotherapist.</p>
+          <div class="lm-actions">
+            <div class="lm-action"><div class="lm-action-dot"></div>Aim for at least 150 minutes of moderate-intensity aerobic activity per week — the standard lifestyle medicine recommendation. Walking, swimming, and cycling are all excellent starting points</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Include resistance training at least twice a week — muscle strength supports the structural environment of the pelvic floor and is important for long-term health, especially after menopause</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Pelvic floor physiotherapy — the single most evidence-based lifestyle intervention for prolapse and bowel dysfunction</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Core strengthening exercises, guided by your physiotherapist, to support the pelvic floor</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Correct toilet posture — a squat position (knees above hips, using a footstool) reduces straining significantly</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Avoid heavy lifting and high-impact exercise without physiotherapy clearance — guidance on safe activities is an active area of our research</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 3: Sleep -->
+      <div class="lm-pillar" onclick="togglePillar(this)">
+        <div class="lm-pillar-head">
+          <div class="lm-pillar-icon">🌙</div>
+          <div class="lm-pillar-head-text">
+            <div class="lm-pillar-name">Restorative sleep</div>
+            <div class="lm-pillar-hook">Sleep repairs tissue. Poor sleep inflames it</div>
+          </div>
+          <div class="lm-chevron">▼</div>
+        </div>
+        <div class="lm-pillar-body">
+          <span class="lm-evidence-pill ev-rationale">Biological rationale — emerging evidence</span>
+          <p class="lm-rationale">Sleep is when the body repairs connective tissue — including collagen, the structural protein that gives the pelvic floor its strength and elasticity. Chronic sleep deprivation elevates cortisol, promotes systemic inflammation, and impairs tissue repair mechanisms. Poor sleep is also independently associated with worsened bowel symptoms: disrupted circadian rhythms alter gut motility and can worsen constipation and urgency. While direct trials on sleep and prolapse are lacking, the mechanistic links are strong enough that restorative sleep should be considered a genuine part of pelvic floor care.</p>
+          <div class="lm-actions">
+            <div class="lm-action"><div class="lm-action-dot"></div>Aim for 7–9 hours of quality sleep per night consistently</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Maintain a regular sleep-wake schedule, including weekends</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Limit screens and bright light in the hour before bed to support melatonin production</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>If you have sleep apnea or chronic insomnia, seek treatment — untreated sleep disorders have systemic consequences</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Notice whether your bowel symptoms are worse after poor sleep nights — many patients find a direct connection</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 4: Stress -->
+      <div class="lm-pillar" onclick="togglePillar(this)">
+        <div class="lm-pillar-head">
+          <div class="lm-pillar-icon">🧠</div>
+          <div class="lm-pillar-head-text">
+            <div class="lm-pillar-name">Stress management</div>
+            <div class="lm-pillar-hook">The gut-brain axis is real — and bidirectional</div>
+          </div>
+          <div class="lm-chevron">▼</div>
+        </div>
+        <div class="lm-pillar-body">
+          <span class="lm-evidence-pill ev-emerging">Emerging evidence</span>
+          <p class="lm-rationale">Chronic psychological stress activates the hypothalamic-pituitary-adrenal (HPA) axis, elevating cortisol and promoting inflammation — both of which impair connective tissue integrity over time. The gut-brain axis is well-established: stress directly alters gut motility, can trigger constipation or urgency, and worsens bowel symptoms in patients with pelvic floor disorders. Dyssynergic defecation — where the pelvic floor muscles fail to relax properly during a bowel movement — has known associations with anxiety and autonomic dysregulation. Managing stress is not an optional extra; it is part of the physiological environment your pelvic floor lives in.</p>
+          <div class="lm-actions">
+            <div class="lm-action"><div class="lm-action-dot"></div>Mindfulness-based stress reduction (MBSR) has the strongest evidence for gut symptom improvement</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Diaphragmatic breathing activates the parasympathetic nervous system and can directly reduce pelvic floor tension</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Yoga and gentle movement practices that combine breath and body awareness are particularly relevant</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>If anxiety or low mood is significantly impacting your quality of life, speak with your GP — psychological support is a clinical intervention, not a luxury</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Notice the connection between stressful periods and changes in your bowel habits — awareness is the first step</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 5: Substances -->
+      <div class="lm-pillar" onclick="togglePillar(this)">
+        <div class="lm-pillar-head">
+          <div class="lm-pillar-icon">🚭</div>
+          <div class="lm-pillar-head-text">
+            <div class="lm-pillar-name">Avoidance of risky substances</div>
+            <div class="lm-pillar-hook">Smoking and alcohol have direct pelvic floor consequences</div>
+          </div>
+          <div class="lm-chevron">▼</div>
+        </div>
+        <div class="lm-pillar-body">
+          <span class="lm-evidence-pill ev-strong">Strong evidence for smoking</span>
+          <p class="lm-rationale">Smoking is directly harmful to pelvic floor health through two mechanisms: chronic cough dramatically increases intra-abdominal pressure with every episode, mechanically stressing the pelvic floor structures repeatedly over years; and smoking impairs collagen synthesis and accelerates connective tissue degradation, weakening the very scaffolding that holds pelvic organs in place. The evidence here is robust. Alcohol is relevant primarily through its effects on bowel function — alcohol is a gut irritant that disrupts motility, can worsen urgency and diarrhoea, and in chronic heavy use promotes systemic inflammation and poor nutritional status.</p>
+          <div class="lm-actions">
+            <div class="lm-action"><div class="lm-action-dot"></div>Stopping smoking is one of the single most impactful things you can do for your pelvic floor — and for your surgical outcomes</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Ask your GP about smoking cessation support — combination pharmacotherapy and behavioural support is significantly more effective than willpower alone</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Treat a chronic cough as a pelvic floor issue — persistent cough from any cause increases prolapse risk and should be investigated and managed</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>If you drink alcohol, notice its effects on your bowel symptoms — reducing intake often leads to noticeable improvement in urgency and frequency</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Before surgery, stopping smoking is mandatory — it significantly increases wound and anastomotic complication risk</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 6: Social connection -->
+      <div class="lm-pillar" onclick="togglePillar(this)">
+        <div class="lm-pillar-head">
+          <div class="lm-pillar-icon">🤝</div>
+          <div class="lm-pillar-head-text">
+            <div class="lm-pillar-name">Social connection &amp; mental health</div>
+            <div class="lm-pillar-hook">Isolation amplifies symptoms. Connection supports recovery</div>
+          </div>
+          <div class="lm-chevron">▼</div>
+        </div>
+        <div class="lm-pillar-body">
+          <span class="lm-evidence-pill ev-rationale">Biological rationale — underexplored in prolapse</span>
+          <p class="lm-rationale">Rectal prolapse carries a significant and often invisible psychological burden. Symptoms including incontinence, urgency, and prolapse itself cause shame, social withdrawal, and avoidance of activities that bring joy — all of which worsen quality of life and, through the stress and inflammation pathways described above, can worsen physical symptoms in return. Social isolation is an independent risk factor for poor health outcomes across almost every chronic condition studied. Our own research has shown that patients with psychiatric comorbidities benefit from prolapse repair — but they often arrive to care later, having suffered longer in silence. You deserve to be in the room, asking the question, and receiving care.</p>
+          <div class="lm-actions">
+            <div class="lm-action"><div class="lm-action-dot"></div>Talk to someone you trust about what you are experiencing — isolation is not a symptom you have to manage alone</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Peer support groups for pelvic floor disorders exist and are genuinely helpful for many patients</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>If you are avoiding social activities because of symptoms, tell your clinical team — there are often practical solutions</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Screen yourself honestly for anxiety and depression — these conditions are highly prevalent in patients with pelvic floor disorders and are treatable</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Recovery is not only physical. Investing in your relationships and mental health is part of getting better</div>
+          </div>
+        </div>
+      </div>
+      <!-- END PILLARS -->
+
+      <!-- Pillar 7: Hormonal health -->
+      <div class="lm-pillar" onclick="togglePillar(this)">
+        <div class="lm-pillar-head">
+          <div class="lm-pillar-icon">🌸</div>
+          <div class="lm-pillar-head-text">
+            <div class="lm-pillar-name">Hormonal health</div>
+            <div class="lm-pillar-hook">Estrogen shapes the pelvic floor. Its decline matters</div>
+          </div>
+          <div class="lm-chevron">▼</div>
+        </div>
+        <div class="lm-pillar-body">
+          <span class="lm-evidence-pill ev-emerging">Emerging evidence — discuss with your clinician</span>
+          <p class="lm-rationale">Estrogen is not just a reproductive hormone — it is a key regulator of connective tissue integrity throughout the body, including the muscles, ligaments, and fascial structures of the pelvic floor. During perimenopause and menopause, declining estrogen leads to changes in collagen composition and tissue elasticity that can weaken pelvic floor support, making existing prolapse more symptomatic or allowing new prolapse to develop. Many women notice their bowel symptoms and prolapse worsen significantly around this time — this is a recognised physiological pattern, not coincidence. Vaginal atrophy, the thinning and drying of vaginal and rectal mucosa due to estrogen loss, can also worsen bowel symptoms including urgency, incomplete emptying, and discomfort. Local vaginal estrogen is a low-risk, locally acting treatment that can improve tissue quality and alleviate some of these symptoms without the systemic exposure of oral hormone therapy — and it is widely underused in women with pelvic floor disorders. Systemic hormone replacement therapy (HRT) is a broader individual risk-benefit conversation with a clinician. Direct trial evidence specifically linking HRT to rectal prolapse outcomes is limited, but the mechanistic rationale for hormonal optimisation as part of pelvic floor care is strong.</p>
+          <div class="lm-actions">
+            <div class="lm-action"><div class="lm-action-dot"></div>If your symptoms worsened around perimenopause or menopause, raise this explicitly with your clinical team — it is clinically relevant</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Ask about vaginal estrogen specifically — it is local, low-risk, and often underused in women with pelvic floor and bowel symptoms</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Discuss systemic HRT with your GP or menopause specialist if you have broader perimenopausal symptoms — the decision is individual and nuanced</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>PFPT and hormonal optimisation work well together — one strengthens the muscles, the other supports the tissue they live in</div>
+            <div class="lm-action"><div class="lm-action-dot"></div>Do not assume hormonal options are off the table without a conversation — many women have never been offered them in the context of pelvic floor symptoms</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- HOW TO INTEGRATE -->
+    <div class="lm-integrate reveal">
+      <h3>How to start integrating lifestyle medicine</h3>
+      <p class="lm-integrate-lead">You do not need to change everything at once. Research consistently shows that starting with one or two sustainable changes — and building from there — produces better long-term outcomes than attempting a wholesale transformation.</p>
+      <div class="lm-integrate-steps">
+        <div class="lm-step">
+          <div class="lm-step-num">01</div>
+          <div class="lm-step-title">Start with fiber and movement</div>
+          <div class="lm-step-body">These have the strongest direct evidence and the most immediate impact on bowel symptoms. Increase fiber gradually to avoid bloating, and begin walking daily. These two changes alone can transform bowel function.</div>
+        </div>
+        <div class="lm-step">
+          <div class="lm-step-num">02</div>
+          <div class="lm-step-title">See a pelvic floor physiotherapist</div>
+          <div class="lm-step-body">This is the highest-evidence lifestyle intervention available for prolapse and bowel dysfunction. Ask your GP or surgical team for a referral if you have not already been seen. Do not wait until surgery is decided.</div>
+        </div>
+        <div class="lm-step">
+          <div class="lm-step-num">03</div>
+          <div class="lm-step-title">Address one more pillar every 4–6 weeks</div>
+          <div class="lm-step-body">Once fiber and movement feel habitual, turn your attention to sleep, then stress, then substances. Each pillar reinforces the others — better sleep improves motivation for movement; less stress improves sleep. Build the whole picture gradually.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="philosophy-strip reveal">
+      <div class="icon">🍽️</div>
+      <blockquote>"Surgery can fix a lot. But it cannot fix the habits that brought you here. We optimise your lifestyle first — because that work protects you before the operation and long after it."
+        <cite>— Our clinical philosophy</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS & SCORES -->
+<section id="tools">
+  <div class="section-inner">
+    <span class="s-label">Symptom scoring</span>
+    <h2 class="s-title reveal">How are your symptoms affecting you?</h2>
+    <p class="s-lead reveal">These validated questionnaires are used by clinicians worldwide to measure the severity of bowel symptoms. Completing them before your appointment — or tracking them over time — gives you and your clinical team a clearer, more objective picture of how you are doing.</p>
+
+    <div class="tools-tabs reveal">
+      <button class="tool-tab active" onclick="showTool('wexner',this)">Wexner Continence Score</button>
+      <button class="tool-tab" onclick="showTool('ods',this)">Obstructed Defecation Score</button>
+    </div>
+
+    <!-- WEXNER -->
+    <div class="tool-panel active" id="tool-wexner">
+      <div class="tool-layout">
+        <div class="tool-form-card">
+          <div class="tool-form-head">
+            <h3>Wexner Continence Score</h3>
+            <p>Cleveland Clinic Florida Fecal Incontinence Score · 5 questions · scored 0–20</p>
+          </div>
+          <div class="tool-questions" id="wexner-qs">
+            <!-- Q1 -->
+            <div class="tool-q">
+              <div class="tool-q-label">1. Incontinence to solid stool</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="wexnerSet(0,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="wexnerSet(0,1,this)">&lt;1/month (1)</div>
+                <div class="tool-q-option" onclick="wexnerSet(0,2,this)">&lt;1/week (2)</div>
+                <div class="tool-q-option" onclick="wexnerSet(0,3,this)">&lt;1/day (3)</div>
+                <div class="tool-q-option" onclick="wexnerSet(0,4,this)">Daily (4)</div>
+              </div>
+            </div>
+            <!-- Q2 -->
+            <div class="tool-q">
+              <div class="tool-q-label">2. Incontinence to liquid stool</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="wexnerSet(1,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="wexnerSet(1,1,this)">&lt;1/month (1)</div>
+                <div class="tool-q-option" onclick="wexnerSet(1,2,this)">&lt;1/week (2)</div>
+                <div class="tool-q-option" onclick="wexnerSet(1,3,this)">&lt;1/day (3)</div>
+                <div class="tool-q-option" onclick="wexnerSet(1,4,this)">Daily (4)</div>
+              </div>
+            </div>
+            <!-- Q3 -->
+            <div class="tool-q">
+              <div class="tool-q-label">3. Incontinence to gas / wind</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="wexnerSet(2,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="wexnerSet(2,1,this)">&lt;1/month (1)</div>
+                <div class="tool-q-option" onclick="wexnerSet(2,2,this)">&lt;1/week (2)</div>
+                <div class="tool-q-option" onclick="wexnerSet(2,3,this)">&lt;1/day (3)</div>
+                <div class="tool-q-option" onclick="wexnerSet(2,4,this)">Daily (4)</div>
+              </div>
+            </div>
+            <!-- Q4 -->
+            <div class="tool-q">
+              <div class="tool-q-label">4. Need to wear a pad or plug</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="wexnerSet(3,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="wexnerSet(3,1,this)">&lt;1/month (1)</div>
+                <div class="tool-q-option" onclick="wexnerSet(3,2,this)">&lt;1/week (2)</div>
+                <div class="tool-q-option" onclick="wexnerSet(3,3,this)">&lt;1/day (3)</div>
+                <div class="tool-q-option" onclick="wexnerSet(3,4,this)">Daily (4)</div>
+              </div>
+            </div>
+            <!-- Q5 -->
+            <div class="tool-q">
+              <div class="tool-q-label">5. Lifestyle alteration — do symptoms affect your daily life?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="wexnerSet(4,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="wexnerSet(4,1,this)">&lt;1/month (1)</div>
+                <div class="tool-q-option" onclick="wexnerSet(4,2,this)">&lt;1/week (2)</div>
+                <div class="tool-q-option" onclick="wexnerSet(4,3,this)">&lt;1/day (3)</div>
+                <div class="tool-q-option" onclick="wexnerSet(4,4,this)">Daily (4)</div>
+              </div>
+            </div>
+          </div>
+          <div class="tool-footer">
+            <button class="tool-reset" onclick="wexnerReset()">Reset answers</button>
+            <span style="font-size:12px;color:var(--text-3)" id="wexner-progress">0 of 5 answered</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-score-display">
+            <div class="tool-score-num" id="wexner-score" style="color:var(--teal)">—</div>
+            <div class="tool-score-label" id="wexner-score-label" style="color:var(--text-3)">Answer all 5 questions</div>
+            <div class="tool-score-bar-wrap"><div class="tool-score-bar" id="wexner-bar" style="width:0%;background:var(--teal-mid)"></div></div>
+            <div class="tool-score-interp" id="wexner-interp" style="background:var(--warm-off);border-color:var(--border)">Your score and interpretation will appear here as you answer.</div>
+            <p class="tool-score-disclaimer">This score is for informational purposes only. It does not constitute a diagnosis or replace a clinical assessment. Bring your score to your next appointment.</p>
+          </div>
+          <div class="tool-about">
+            <h4>About this score</h4>
+            <p>The Wexner (Cleveland Clinic) Continence Score is one of the most widely used and validated instruments for measuring fecal incontinence severity. Scores range from 0 (perfect continence) to 20 (complete incontinence). A score of 0 indicates no incontinence; scores above 9 are generally considered clinically significant. It is used in our published research and in prolapse registries worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ODS -->
+    <div class="tool-panel" id="tool-ods">
+      <div class="tool-layout">
+        <div class="tool-form-card">
+          <div class="tool-form-head">
+            <h3>Obstructed Defecation Score</h3>
+            <p>ODS Score · 7 questions · scored 0–31</p>
+          </div>
+          <div class="tool-questions" id="ods-qs">
+            <div class="tool-q">
+              <div class="tool-q-label">1. How often do you have a bowel movement?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="odsSet(0,0,this)">1–2/day (0)</div>
+                <div class="tool-q-option" onclick="odsSet(0,1,this)">Every 2 days (1)</div>
+                <div class="tool-q-option" onclick="odsSet(0,2,this)">Every 3–4 days (2)</div>
+                <div class="tool-q-option" onclick="odsSet(0,3,this)">Every 5–7 days (3)</div>
+                <div class="tool-q-option" onclick="odsSet(0,4,this)">&gt;7 days (4)</div>
+              </div>
+            </div>
+            <div class="tool-q">
+              <div class="tool-q-label">2. How difficult is it to empty your bowel?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="odsSet(1,0,this)">No difficulty (0)</div>
+                <div class="tool-q-option" onclick="odsSet(1,1,this)">Mild (1)</div>
+                <div class="tool-q-option" onclick="odsSet(1,2,this)">Moderate (2)</div>
+                <div class="tool-q-option" onclick="odsSet(1,3,this)">Severe (3)</div>
+                <div class="tool-q-option" onclick="odsSet(1,4,this)">Very severe (4)</div>
+              </div>
+            </div>
+            <div class="tool-q">
+              <div class="tool-q-label">3. Do you feel incomplete emptying after a bowel movement?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="odsSet(2,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="odsSet(2,1,this)">Rarely (1)</div>
+                <div class="tool-q-option" onclick="odsSet(2,2,this)">Sometimes (2)</div>
+                <div class="tool-q-option" onclick="odsSet(2,3,this)">Usually (3)</div>
+                <div class="tool-q-option" onclick="odsSet(2,4,this)">Always (4)</div>
+              </div>
+            </div>
+            <div class="tool-q">
+              <div class="tool-q-label">4. Do you need to use enemas or laxatives to have a bowel movement?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="odsSet(3,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="odsSet(3,1,this)">Rarely (1)</div>
+                <div class="tool-q-option" onclick="odsSet(3,2,this)">Sometimes (2)</div>
+                <div class="tool-q-option" onclick="odsSet(3,3,this)">Usually (3)</div>
+                <div class="tool-q-option" onclick="odsSet(3,4,this)">Always (4)</div>
+              </div>
+            </div>
+            <div class="tool-q">
+              <div class="tool-q-label">5. Do you need to use digital manoeuvres (finger assistance) to empty your bowel?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="odsSet(4,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="odsSet(4,2,this)">Rarely (2)</div>
+                <div class="tool-q-option" onclick="odsSet(4,4,this)">Sometimes (4)</div>
+                <div class="tool-q-option" onclick="odsSet(4,6,this)">Usually (6)</div>
+                <div class="tool-q-option" onclick="odsSet(4,8,this)">Always (8)</div>
+              </div>
+            </div>
+            <div class="tool-q">
+              <div class="tool-q-label">6. Do you experience pain during defecation?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="odsSet(5,0,this)">Never (0)</div>
+                <div class="tool-q-option" onclick="odsSet(5,1,this)">Rarely (1)</div>
+                <div class="tool-q-option" onclick="odsSet(5,2,this)">Sometimes (2)</div>
+                <div class="tool-q-option" onclick="odsSet(5,3,this)">Usually (3)</div>
+                <div class="tool-q-option" onclick="odsSet(5,4,this)">Always (4)</div>
+              </div>
+            </div>
+            <div class="tool-q">
+              <div class="tool-q-label">7. Do bowel symptoms affect your quality of life?</div>
+              <div class="tool-q-options">
+                <div class="tool-q-option" onclick="odsSet(6,0,this)">Not at all (0)</div>
+                <div class="tool-q-option" onclick="odsSet(6,2,this)">A little (2)</div>
+                <div class="tool-q-option" onclick="odsSet(6,4,this)">Moderately (4)</div>
+                <div class="tool-q-option" onclick="odsSet(6,6,this)">Quite a lot (6)</div>
+                <div class="tool-q-option" onclick="odsSet(6,7,this)">A great deal (7)</div>
+              </div>
+            </div>
+          </div>
+          <div class="tool-footer">
+            <button class="tool-reset" onclick="odsReset()">Reset answers</button>
+            <span style="font-size:12px;color:var(--text-3)" id="ods-progress">0 of 7 answered</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-score-display">
+            <div class="tool-score-num" id="ods-score" style="color:var(--teal)">—</div>
+            <div class="tool-score-label" id="ods-score-label" style="color:var(--text-3)">Answer all 7 questions</div>
+            <div class="tool-score-bar-wrap"><div class="tool-score-bar" id="ods-bar" style="width:0%;background:var(--teal-mid)"></div></div>
+            <div class="tool-score-interp" id="ods-interp" style="background:var(--warm-off);border-color:var(--border)">Your score and interpretation will appear here as you answer.</div>
+            <p class="tool-score-disclaimer">This score is for informational purposes only. It does not constitute a diagnosis or replace a clinical assessment. Bring your score to your next appointment.</p>
+          </div>
+          <div class="tool-about">
+            <h4>About this score</h4>
+            <p>The Obstructed Defecation Score (ODS Score, Renzi et al.) measures the severity of obstructed defecation — difficulty emptying the bowel despite the urge to do so. Scores range from 0 to 31. Scores of 0–8 are mild, 9–13 moderate, and 14 or above severe. It is widely used in the assessment and follow-up of patients with rectal prolapse, rectocele, and pelvic floor dysfunction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SURGICAL RISKS -->
+<section id="risks">
+  <div class="section-inner">
+    <span class="s-label">Making an informed decision</span>
+    <h2 class="s-title reveal">Surgical risks &amp; outcomes</h2>
+    <div class="risks-intro reveal">
+      <p>Every surgical procedure carries risk. Understanding what those risks are — and how likely they are — is an essential part of making an informed decision about your care. The figures below reflect what is reported in the published literature for rectopexy and pelvic floor surgery. Where we have our own series data, we will discuss this with you directly at your appointment.</p>
+      <p>These ranges are guides, not guarantees. Your individual risk profile — including age, general health, frailty, and the specific procedure planned — will modify these figures. This is exactly the conversation we have with every patient before surgery.</p>
+    </div>
+
+    <div class="risks-note reveal">
+      <div class="risks-note-icon">🏥</div>
+      <p><strong>About our series data.</strong> We maintain a prospective outcomes registry of 467+ patients. Our complication rates, recurrence rates, and functional outcomes are tracked systematically and discussed with patients as part of the informed consent process. If you would like to know our specific institutional figures, please ask at your appointment or contact us directly.</p>
+    </div>
+
+    <div class="risks-grid reveal">
+
+      <div class="risk-card">
+        <div class="risk-card-title"><span class="risk-card-icon">🔬</span>General surgical risks</div>
+        <div class="risk-item"><span class="risk-name">Wound infection (laparoscopic)</span><span class="risk-rate low">&lt;3%</span></div>
+        <div class="risk-item"><span class="risk-name">Bleeding requiring transfusion</span><span class="risk-rate low">&lt;2%</span></div>
+        <div class="risk-item"><span class="risk-name">Conversion to open surgery</span><span class="risk-rate low">1–3%</span></div>
+        <div class="risk-item"><span class="risk-name">Anaesthetic complications</span><span class="risk-rate low">Rare</span></div>
+        <div class="risk-item"><span class="risk-name">Deep vein thrombosis / PE</span><span class="risk-rate low">&lt;1%</span></div>
+        <div class="risk-item"><span class="risk-name">Urinary tract injury</span><span class="risk-rate low">&lt;1%</span></div>
+        <div class="risk-item"><span class="risk-name">Return to theatre (all causes)</span><span class="risk-rate low">1–3%</span></div>
+      </div>
+
+      <div class="risk-card">
+        <div class="risk-card-title"><span class="risk-card-icon">📊</span>Rectopexy-specific outcomes</div>
+        <div class="risk-item"><span class="risk-name">Prolapse recurrence (abdominal rectopexy)</span><span class="risk-rate mod">~15%</span></div>
+        <div class="risk-item"><span class="risk-name">Improvement in fecal incontinence</span><span class="risk-rate low">60–80% improve</span></div>
+        <div class="risk-item"><span class="risk-name">New or worsened constipation</span><span class="risk-rate mod">10–30%</span></div>
+        <div class="risk-item"><span class="risk-name">Sexual dysfunction (new)</span><span class="risk-rate low">Rare (&lt;3%)</span></div>
+        <div class="risk-item"><span class="risk-name">Urinary dysfunction (new)</span><span class="risk-rate low">&lt;5%</span></div>
+        <div class="risk-item"><span class="risk-name">Hospital stay (laparoscopic)</span><span class="risk-rate varies">1–3 days</span></div>
+        <div class="risk-item"><span class="risk-name">Return to normal activity</span><span class="risk-rate varies">4–6 weeks</span></div>
+      </div>
+
+      <div class="risk-card">
+        <div class="risk-card-title"><span class="risk-card-icon">🧵</span>Mesh-specific considerations</div>
+        <div class="risk-item"><span class="risk-name">Mesh erosion (synthetic)</span><span class="risk-rate mod">1–5%</span></div>
+        <div class="risk-item"><span class="risk-name">Mesh infection requiring removal</span><span class="risk-rate low">&lt;2%</span></div>
+        <div class="risk-item"><span class="risk-name">Pelvic pain related to mesh</span><span class="risk-rate low">&lt;3%</span></div>
+        <div class="risk-item"><span class="risk-name">Biologic graft resorption</span><span class="risk-rate varies">Variable</span></div>
+        <div class="risk-item"><span class="risk-name">Recurrence (mesh vs suture)</span><span class="risk-rate varies">Comparable data</span></div>
+        <div class="risk-item"><span class="risk-name">Smoking increases mesh erosion risk</span><span class="risk-rate mod">Significantly</span></div>
+      </div>
+
+      <div class="risk-card">
+        <div class="risk-card-title"><span class="risk-card-icon">🌿</span>Perineal procedures</div>
+        <div class="risk-item"><span class="risk-name">Higher recurrence vs abdominal rectopexy</span><span class="risk-rate mod">~30%</span></div>
+        <div class="risk-item"><span class="risk-name">Lower overall surgical risk</span><span class="risk-rate low">Generally lower</span></div>
+        <div class="risk-item"><span class="risk-name">Suitable for frail / high-risk patients</span><span class="risk-rate varies">Yes</span></div>
+        <div class="risk-item"><span class="risk-name">No abdominal entry required</span><span class="risk-rate low">Advantage</span></div>
+        <div class="risk-item"><span class="risk-name">Anastomotic leak (Altemeier)</span><span class="risk-rate low">&lt;3%</span></div>
+        <div class="risk-item"><span class="risk-name">Functional improvement</span><span class="risk-rate varies">Moderate</span></div>
+      </div>
+
+    </div>
+
+    <!-- RECURRENCE FACTORS -->
+    <div class="recurrence-section reveal">
+      <div class="lm-divider">
+        <div class="lm-divider-line"></div>
+        <span class="lm-divider-label">Factors associated with recurrence</span>
+        <div class="lm-divider-line"></div>
+      </div>
+      <p style="font-size:14.5px;color:var(--text-2);line-height:1.8;margin:1rem 0 1.5rem;max-width:680px;">We cannot give you a single number for your personal recurrence risk — no validated prediction model yet exists for rectal prolapse (this is one of the top priorities identified in our Delphi research). What the literature does show is which factors are associated with higher or lower risk, and which are within your power to modify.</p>
+      <div class="recurrence-grid">
+        <div class="rf-card">
+          <div class="rf-card-head"><span class="rf-badge higher">Associated with higher risk</span></div>
+          <div class="rf-title" style="margin-bottom:12px;font-family:'Playfair Display',serif;font-size:16px;">Factors the evidence flags</div>
+          <div class="rf-items">
+            <div class="rf-item"><div class="rf-dot higher"></div>Younger age — not because surgery works less well, but because a longer lifetime ahead means more years during which recurrence can occur</div>
+            <div class="rf-item"><div class="rf-dot higher"></div>Older age (&gt;80) — higher overall surgical risk and frailty may influence approach and recovery</div>
+            <div class="rf-item"><div class="rf-dot higher"></div>Connective tissue disorders and hypermobility syndromes (e.g. Ehlers-Danlos) — underlying tissue fragility affects repair durability</div>
+            <div class="rf-item"><div class="rf-dot higher"></div>Perineal approach — recurrence rates are higher than abdominal rectopexy, though perineal procedures are often chosen deliberately for higher-risk patients</div>
+            <div class="rf-item"><div class="rf-dot higher"></div>Prior prolapse repair — recurrent prolapse carries higher recurrence risk than primary repair</div>
+          </div>
+        </div>
+        <div class="rf-card">
+          <div class="rf-card-head"><span class="rf-badge lower">Associated with lower risk</span></div>
+          <div class="rf-title" style="margin-bottom:12px;font-family:'Playfair Display',serif;font-size:16px;">Protective factors</div>
+          <div class="rf-items">
+            <div class="rf-item"><div class="rf-dot lower"></div>Abdominal rectopexy (laparoscopic or robotic)</div>
+            <div class="rf-item"><div class="rf-dot lower"></div>Lifestyle optimisation before surgery</div>
+            <div class="rf-item"><div class="rf-dot lower"></div>Pelvic floor physiotherapy before and after surgery</div>
+            <div class="rf-item"><div class="rf-dot lower"></div>Sustained high-fiber diet and normal stool consistency</div>
+            <div class="rf-item"><div class="rf-dot lower"></div>Non-smoker status at time of surgery</div>
+            <div class="rf-item"><div class="rf-dot lower"></div>Long-term follow-up and early identification of recurrence</div>
+          </div>
+        </div>
+        <div class="rf-card" style="grid-column:1/-1;">
+          <div class="rf-card-head"><span class="rf-badge modifiable">Within your power to change</span></div>
+          <div class="rf-title" style="margin-bottom:12px;font-family:'Playfair Display',serif;font-size:16px;">Modifiable factors — where lifestyle medicine matters most</div>
+          <div class="rf-items" style="display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;">
+            <div class="rf-item"><div class="rf-dot modifiable"></div>Stopping smoking before surgery</div>
+            <div class="rf-item"><div class="rf-dot modifiable"></div>Treating chronic constipation with fiber and hydration</div>
+            <div class="rf-item"><div class="rf-dot modifiable"></div>Eliminating straining at stool</div>
+            <div class="rf-item"><div class="rf-dot modifiable"></div>Maintaining pelvic floor exercises long-term</div>
+            <div class="rf-item"><div class="rf-dot modifiable"></div>Attending all follow-up appointments</div>
+            <div class="rf-item"><div class="rf-dot modifiable"></div>Reporting new or returning symptoms early</div>
+          </div>
+        </div>
+      </div>
+      <div class="recurrence-caveat">
+        <strong>What the literature reports:</strong> Recurrence rates of approximately 15% are reported for abdominal rectopexy and approximately 30% for perineal procedures. These figures reflect published literature ranges — individual risk depends on the factors above and will be discussed with you directly. A validated personalised prediction model for rectal prolapse does not yet exist; this is one of the top priorities identified in our international Delphi consensus involving 372 clinicians, and our ongoing registry work is designed to generate the data needed to build one.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RISK CALCULATOR -->
+<section id="calculator">
+  <div class="section-inner">
+    <span class="s-label">Personalised risk assessment</span>
+    <h2 class="s-title reveal">Your risk profile</h2>
+    <p class="s-lead reveal">Answer the questions below to generate a personalised summary of your estimated complication and recurrence risk. This tool is based on published evidence and clinical weighting — not a black-box algorithm.</p>
+
+    <div class="calc-disclaimer reveal">
+      <strong>Important:</strong> This tool provides an educational estimate based on published literature and clinical factors. It is not a diagnostic tool and does not replace an individual consultation with your surgeon. Risk profiles are discussed in detail at your pre-operative appointment, where your surgeon will apply these factors specifically to your situation and procedure.
+    </div>
+
+    <div class="calc-tabs reveal">
+      <button class="calc-tab active" onclick="showCalc('comp',this)">Complication risk</button>
+      <button class="calc-tab" onclick="showCalc('rec',this)">Recurrence risk</button>
+    </div>
+
+    <!-- COMPLICATION CALCULATOR -->
+    <div class="calc-panel active" id="calc-comp">
+      <div class="calc-layout">
+        <div class="calc-form">
+          <div class="calc-form-head">
+            <h3>Complication risk factors</h3>
+            <p>Select the option that best applies to you for each question</p>
+          </div>
+          <div class="calc-fields">
+
+            <div class="calc-field">
+              <div class="calc-field-label">Age</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('age','low',this)">Under 60</div>
+                <div class="calc-opt" onclick="cSet('age','mod',this)">60–74</div>
+                <div class="calc-opt" onclick="cSet('age','high',this)">75–79</div>
+                <div class="calc-opt" onclick="cSet('age','vhigh',this)">80 or over</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">BMI</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('bmi','low',this)">18.5–24.9 (healthy)</div>
+                <div class="calc-opt" onclick="cSet('bmi','low',this)">25–29.9 (overweight)</div>
+                <div class="calc-opt" onclick="cSet('bmi','mod',this)">30–34.9 (obese)</div>
+                <div class="calc-opt" onclick="cSet('bmi','high',this)">35+ (severely obese)</div>
+                <div class="calc-opt" onclick="cSet('bmi','mod',this)">&lt;18.5 (underweight)</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Smoking status</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('smoke','low',this)">Non-smoker</div>
+                <div class="calc-opt" onclick="cSet('smoke','low',this)">Ex-smoker (&gt;1 year)</div>
+                <div class="calc-opt" onclick="cSet('smoke','high',this)">Current smoker</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Diabetes</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('dm','low',this)">No diabetes</div>
+                <div class="calc-opt" onclick="cSet('dm','mod',this)">Well-controlled diabetes</div>
+                <div class="calc-opt" onclick="cSet('dm','high',this)">Poorly controlled diabetes</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">ASA grade / overall health</div>
+              <span class="calc-field-sub">ASA 1 = healthy, ASA 2 = mild disease, ASA 3 = significant disease, ASA 4 = life-threatening disease</span>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('asa','low',this)">ASA 1 — healthy</div>
+                <div class="calc-opt" onclick="cSet('asa','low',this)">ASA 2 — mild systemic disease</div>
+                <div class="calc-opt" onclick="cSet('asa','mod',this)">ASA 3 — severe systemic disease</div>
+                <div class="calc-opt" onclick="cSet('asa','high',this)">ASA 4 — life-threatening disease</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Frailty / functional status</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('frail','low',this)">Fully independent</div>
+                <div class="calc-opt" onclick="cSet('frail','low',this)">Independent with some limitations</div>
+                <div class="calc-opt" onclick="cSet('frail','mod',this)">Requires some assistance</div>
+                <div class="calc-opt" onclick="cSet('frail','high',this)">Significantly dependent</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Prior abdominal surgery</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('prior','low',this)">No prior surgery</div>
+                <div class="calc-opt" onclick="cSet('prior','low',this)">Minor prior surgery</div>
+                <div class="calc-opt" onclick="cSet('prior','mod',this)">Major prior abdominal surgery</div>
+                <div class="calc-opt" onclick="cSet('prior','mod',this)">Multiple prior surgeries</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Chronic narcotic / opioid use</div>
+              <span class="calc-field-sub">Affects bowel motility, wound healing, and post-operative recovery</span>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('opioid','low',this)">No regular opioid use</div>
+                <div class="calc-opt" onclick="cSet('opioid','mod',this)">Occasional / low-dose use</div>
+                <div class="calc-opt" onclick="cSet('opioid','high',this)">Regular / high-dose chronic use</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Connective tissue disorder / hypermobility</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="cSet('ctd','low',this)">No known disorder</div>
+                <div class="calc-opt" onclick="cSet('ctd','mod',this)">Hypermobility syndrome</div>
+                <div class="calc-opt" onclick="cSet('ctd','high',this)">Ehlers-Danlos or similar</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="calc-footer">
+            <button class="calc-reset-btn" onclick="resetCalc('comp')">Reset</button>
+            <span class="calc-prog-txt" id="comp-prog">0 of 9 answered</span>
+          </div>
+        </div>
+
+        <div class="calc-result" id="comp-result">
+          <div class="calc-waiting" id="comp-waiting">
+            <div class="calc-waiting-icon">🔍</div>
+            <p>Answer the questions on the left to generate your personalised complication risk summary.</p>
+          </div>
+          <div class="calc-output" id="comp-output">
+            <span class="calc-risk-badge" id="comp-badge">—</span>
+            <div class="calc-risk-title" id="comp-title">—</div>
+            <div class="calc-risk-body" id="comp-body">—</div>
+            <div class="calc-factors-box" id="comp-factors-box" style="display:none">
+              <div class="calc-factors-lbl">Factors contributing to your profile</div>
+              <div id="comp-factors-list"></div>
+            </div>
+            <div class="calc-factors-box" id="comp-positive-box" style="display:none">
+              <div class="calc-factors-lbl" style="color:#2e7d32">Factors in your favour</div>
+              <div id="comp-positive-list"></div>
+            </div>
+            <p class="calc-disc">This estimate is educational only and based on published literature. It does not replace a personalised surgical assessment. Your surgeon will discuss your individual risk profile before any procedure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECURRENCE CALCULATOR -->
+    <div class="calc-panel" id="calc-rec">
+      <div class="calc-layout">
+        <div class="calc-form">
+          <div class="calc-form-head">
+            <h3>Recurrence risk factors</h3>
+            <p>Based on published literature — abdominal rectopexy ~15%, perineal ~30%</p>
+          </div>
+          <div class="calc-fields">
+
+            <div class="calc-field">
+              <div class="calc-field-label">Age at time of surgery</div>
+              <span class="calc-field-sub">Younger age means a longer lifetime — more years during which recurrence can occur</span>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('age','high',this)">Under 40</div>
+                <div class="calc-opt" onclick="rSet('age','mod',this)">40–59</div>
+                <div class="calc-opt" onclick="rSet('age','low',this)">60–79</div>
+                <div class="calc-opt" onclick="rSet('age','mod',this)">80 or over</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Planned or likely surgical approach</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('approach','low',this)">Abdominal rectopexy (~15%)</div>
+                <div class="calc-opt" onclick="rSet('approach','high',this)">Perineal procedure (~30%)</div>
+                <div class="calc-opt" onclick="rSet('approach','mod',this)">Not yet decided</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Is this a first repair or recurrent prolapse?</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('prev','low',this)">First repair (primary)</div>
+                <div class="calc-opt" onclick="rSet('prev','high',this)">Prior prolapse repair (recurrent)</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Connective tissue disorder / hypermobility</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('ctd','low',this)">No known disorder</div>
+                <div class="calc-opt" onclick="rSet('ctd','mod',this)">Hypermobility syndrome</div>
+                <div class="calc-opt" onclick="rSet('ctd','high',this)">Ehlers-Danlos or similar</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Smoking status</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('smoke','low',this)">Non-smoker</div>
+                <div class="calc-opt" onclick="rSet('smoke','low',this)">Ex-smoker (&gt;1 year)</div>
+                <div class="calc-opt" onclick="rSet('smoke','high',this)">Current smoker</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Chronic constipation / ongoing straining</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('constip','low',this)">Bowel habits well managed</div>
+                <div class="calc-opt" onclick="rSet('constip','mod',this)">Occasional straining</div>
+                <div class="calc-opt" onclick="rSet('constip','high',this)">Chronic constipation / regular straining</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">Chronic narcotic / opioid use</div>
+              <span class="calc-field-sub">Affects bowel motility and tissue healing long-term</span>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('opioid','low',this)">No regular opioid use</div>
+                <div class="calc-opt" onclick="rSet('opioid','mod',this)">Occasional / low-dose use</div>
+                <div class="calc-opt" onclick="rSet('opioid','high',this)">Regular / high-dose chronic use</div>
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <div class="calc-field-label">BMI</div>
+              <div class="calc-options">
+                <div class="calc-opt" onclick="rSet('bmi','low',this)">18.5–29.9</div>
+                <div class="calc-opt" onclick="rSet('bmi','mod',this)">30–34.9</div>
+                <div class="calc-opt" onclick="rSet('bmi','high',this)">35+</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="calc-footer">
+            <button class="calc-reset-btn" onclick="resetCalc('rec')">Reset</button>
+            <span class="calc-prog-txt" id="rec-prog">0 of 8 answered</span>
+          </div>
+        </div>
+
+        <div class="calc-result" id="rec-result">
+          <div class="calc-waiting" id="rec-waiting">
+            <div class="calc-waiting-icon">🔄</div>
+            <p>Answer the questions on the left to generate your personalised recurrence risk summary.</p>
+          </div>
+          <div class="calc-output" id="rec-output">
+            <span class="calc-risk-badge" id="rec-badge">—</span>
+            <div class="calc-risk-title" id="rec-title">—</div>
+            <div class="calc-risk-body" id="rec-body">—</div>
+            <div class="calc-factors-box" id="rec-factors-box" style="display:none">
+              <div class="calc-factors-lbl">Factors contributing to your profile</div>
+              <div id="rec-factors-list"></div>
+            </div>
+            <div class="calc-factors-box" id="rec-positive-box" style="display:none">
+              <div class="calc-factors-lbl" style="color:#2e7d32">Modifiable factors in your favour</div>
+              <div id="rec-positive-list"></div>
+            </div>
+            <p class="calc-disc">Recurrence rates of ~15% (abdominal rectopexy) and ~30% (perineal procedures) are reported in the literature. A validated personalised prediction model does not yet exist — this profile is based on clinical weighting of published risk factors. Discuss your individual situation with your surgeon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PREPARING -->
+<section id="preparing">
+  <div class="section-inner">
+    <span class="s-label">Before your operation</span>
+    <h2 class="s-title reveal">Preparing for surgery</h2>
+    <p class="s-lead reveal">Good preparation makes a real difference to how you recover. Here is a timeline of what to expect, and a checklist to track your readiness.</p>
+    <div class="prep-layout">
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-dot">1</div>
+          <div class="tl-card">
+            <div class="tl-when">6–8 weeks before</div>
+            <h3 class="tl-title">Lifestyle optimisation</h3>
+            <div class="tl-body">This is your most important window. Changes made now directly influence your recovery — and habits built here tend to stick long after surgery.</div>
+            <div class="tl-tips">
+              <div class="tl-tip">Increase dietary fiber to 25–30g/day and ensure adequate hydration</div>
+              <div class="tl-tip">Begin or continue pelvic floor physiotherapy</div>
+              <div class="tl-tip">Start a daily walking habit — 30 minutes is the target. This is an ideal time to make movement a routine, not a plan</div>
+              <div class="tl-tip">Learn diaphragmatic breathing and begin a simple stress reduction practice — breath work activates the parasympathetic nervous system and directly reduces pelvic floor tension. Even 5–10 minutes daily makes a difference</div>
+              <div class="tl-tip">If you smoke, stop now — smoking significantly increases complication risk</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">2</div>
+          <div class="tl-card">
+            <div class="tl-when">2–4 weeks before</div>
+            <h3 class="tl-title">Pre-operative assessment</h3>
+            <div class="tl-body">You will attend a pre-admission clinic where blood tests, an ECG, and an anaesthetic assessment are completed.</div>
+            <div class="tl-tips">
+              <div class="tl-tip">Bring a full list of your current medications</div>
+              <div class="tl-tip">You may be asked to stop blood thinners, NSAIDs, GLP-1 medications, or diabetic medications — follow the specific advice given by your surgical team</div>
+              <div class="tl-tip">Discuss any allergies, prior anaesthetic reactions, or concerns</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">3</div>
+          <div class="tl-card">
+            <div class="tl-when">Night before &amp; morning of</div>
+            <h3 class="tl-title">The day before surgery</h3>
+            <div class="tl-body">Follow the specific preparation instructions given by your surgical team — these vary depending on the procedure planned.</div>
+            <div class="tl-tips">
+              <div class="tl-tip">No food or drink for 8 hours before your operation — this includes water</div>
+              <div class="tl-tip">You may be given bowel preparation — take exactly as directed</div>
+              <div class="tl-tip">Arrange transport home and someone to stay the first night</div>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">4</div>
+          <div class="tl-card">
+            <div class="tl-when">Day of surgery</div>
+            <h3 class="tl-title">Arriving at hospital</h3>
+            <div class="tl-body">You will be admitted, seen by the anaesthetist and your surgeon, with the opportunity to ask any final questions before theatre.</div>
+            <div class="tl-tips">
+              <div class="tl-tip">Wear loose, comfortable clothing</div>
+              <div class="tl-tip">Leave jewellery and valuables at home</div>
+              <div class="tl-tip">Bring something to read — waiting times can vary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checklist-card reveal">
+        <div class="cl-head">Pre-surgery checklist<div class="cl-sub">Tick each item as you complete it</div></div>
+        <div class="cl-body">
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Seen pelvic floor physiotherapist</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Watched bowel health animation</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Increased fiber intake</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Stopped smoking (if applicable)</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Attended pre-admission clinic</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Medication list updated &amp; shared</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Transport home arranged</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Someone to stay first night</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Loose clothing packed</span></div>
+          <div class="cl-item"><div class="cl-box" onclick="tick(this)"></div><span>Questions written for surgeon</span></div>
+        </div>
+        <div class="cl-progress">
+          <div class="cl-prog-label"><span>Progress</span><span id="progText">0 of 10</span></div>
+          <div class="cl-bar"><div class="cl-fill" id="progBar"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFE AFTER -->
+<section id="life-after">
+  <div class="section-inner">
+    <span class="s-label">Recovery &amp; beyond</span>
+    <h2 class="s-title reveal">Life after surgery</h2>
+    <p class="s-lead reveal">Recovery from rectopexy is gradual. Most patients are surprised by how quickly they improve — and by how much the right habits matter in the weeks and months that follow.</p>
+    <div class="recovery-grid reveal">
+      <div class="rec-card">
+        <div class="rec-phase">Week 1–2</div>
+        <h3 class="rec-title">Immediate recovery</h3>
+        <p class="rec-body">You will typically spend 1–2 nights in hospital. Pain is manageable with regular oral analgesia, and most patients are mobile within hours of surgery.</p>
+        <div class="rec-markers">
+          <div class="rec-marker"><div class="rm-dot on"></div>Walking the same day</div>
+          <div class="rec-marker"><div class="rm-dot on"></div>Eating and drinking normally</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Driving once off pain medications</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Return to desk work (1–2 weeks)</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-phase">Week 3–6</div>
+        <h3 class="rec-title">Rebuilding</h3>
+        <p class="rec-body">Bowel function gradually normalises. Some patients notice temporary changes in frequency or consistency — this usually settles. Pelvic floor exercises resume.</p>
+        <div class="rec-markers">
+          <div class="rec-marker"><div class="rm-dot on"></div>Daily short walks</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Light activity, no heavy lifting</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Bowel function normalising</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Follow-up appointment</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-phase">Month 2–3</div>
+        <h3 class="rec-title">Returning to normal</h3>
+        <p class="rec-body">Most patients have returned to all normal activities by 6–8 weeks. Exercise, sexual activity, and travel are typically all resumed within this window.</p>
+        <div class="rec-markers">
+          <div class="rec-marker"><div class="rm-dot"></div>Full return to physical activity</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Sexual activity resumed</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Return to all work types</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Long-term lifestyle plan in place</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-phase">6–12 months</div>
+        <h3 class="rec-title">Long-term wellbeing</h3>
+        <p class="rec-body">Annual follow-up monitors long-term function. Maintaining the lifestyle changes made before surgery protects your repair and supports overall pelvic health.</p>
+        <div class="rec-markers">
+          <div class="rec-marker"><div class="rm-dot"></div>Annual review appointment</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Sustained dietary habits</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Pelvic floor maintenance</div>
+          <div class="rec-marker"><div class="rm-dot"></div>Quality of life assessment</div>
+        </div>
+      </div>
+    </div>
+    <div class="lifestyle-panel reveal">
+      <h3>Protecting your long-term bowel &amp; pelvic health</h3>
+      <div class="lp-col">
+        <h4>🥗 What you eat</h4>
+        <ul>
+          <li>30g fiber daily from whole foods</li>
+          <li>Fermented foods for gut diversity</li>
+          <li>1.5–2L hydration daily</li>
+          <li>Anti-inflammatory whole-food diet</li>
+          <li>Limit processed foods</li>
+        </ul>
+      </div>
+      <div class="lp-col">
+        <h4>🚶 How you move</h4>
+        <ul>
+          <li>Daily walking — 30 min minimum</li>
+          <li>Pelvic floor exercises long-term</li>
+          <li>Correct squat posture on toilet</li>
+          <li>Avoid heavy straining or lifting</li>
+          <li>Core strengthening when cleared</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-inner">
+    <span class="s-label">Evidence base</span>
+    <h2 class="s-title reveal">Our research</h2>
+    <p class="s-lead reveal">We conduct and publish research on rectal prolapse, rectopexy outcomes, bowel dysfunction, and pelvic floor disorders — including emerging qualitative and survey-based work exploring the patient experience. Below is a selection of our work across study types.</p>
+    <div class="filter-row reveal">
+      <button class="f-btn on" onclick="filterStudies('all',this)">All studies</button>
+      <button class="f-btn" onclick="filterStudies('outcomes',this)">Surgical outcomes</button>
+      <button class="f-btn" onclick="filterStudies('qol',this)">Quality of life</button>
+      <button class="f-btn" onclick="filterStudies('technique',this)">Technique</button>
+      <button class="f-btn" onclick="filterStudies('lifestyle',this)">Lifestyle</button>
+    </div>
+    <div class="study-grid" id="studyGrid">
+
+      <div class="study-card" data-tags="outcomes qol">
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span><span class="s-tag qol">Quality of life</span></div>
+        <div class="study-title">Rectal Prolapse: Age-Related Differences in Clinical Presentation and What Bothers Women Most</div>
+        <div class="study-authors">Neshatian L, Lee A, Trickey AW, Arnow KD, Gurland BH</div>
+        <div class="study-journal">Diseases of the Colon &amp; Rectum · 2021 · 64(5):609–616</div>
+        <p class="study-abstract">This study examined how rectal prolapse presents differently across age groups and identified which symptoms women find most bothersome — providing a foundation for more personalised and patient-centred treatment decisions.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/33496475/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card" data-tags="outcomes">
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span></div>
+        <div class="study-title">Association Between Frailty and Preoperative Decision-Making in Rectal Prolapse Repair</div>
+        <div class="study-authors">Rajasingh CM, McCarthy MS, Barreto NB, Trickey AW, Bungo C, Neshatian L, Gurland BH</div>
+        <div class="study-journal">Journal of Surgical Research · 2025 · 305:331–336</div>
+        <p class="study-abstract">Frailty assessment influences surgical planning in important ways. This study explores how frailty shapes preoperative decision-making in rectal prolapse repair, with implications for patient safety and approach selection.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/39733470/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card" data-tags="outcomes technique">
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span><span class="s-tag technique">Technique</span></div>
+        <div class="study-title">Postoperative Complications and Recurrence Rates After Rectal Prolapse Surgery Versus Combined Rectal Prolapse and Pelvic Organ Prolapse Surgery</div>
+        <div class="study-authors">Wallace SL, Enemchukwu EA, Mishra K, Neshatian L, Chen B, Rogo-Gupta L, Sokol ER, Gurland BH</div>
+        <div class="study-journal">International Urogynecology Journal · 2021 · 32(9):2401–2411</div>
+        <p class="study-abstract">Some patients require repair of both rectal prolapse and pelvic organ prolapse. This study compared outcomes and recurrence rates between isolated and combined procedures, informing surgical planning for complex pelvic floor presentations.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/33864476/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card featured" data-tags="technique lifestyle">
+        <div class="study-badge">Multi-Society Consensus</div>
+        <div class="study-tags"><span class="s-tag technique">Technique</span><span class="s-tag lifestyle">Lifestyle</span></div>
+        <div class="study-title">Incorporating Pelvic Floor Physical Therapy in the Treatment of Obstructed Defecation Syndrome and Posterior Compartment Pelvic Organ and Rectal Prolapse</div>
+        <div class="study-authors">Traugott AL, Barten J, Bordeianou L, et al. &amp; Gurland BH; Pelvic Floor Disorders Consortium Work Group 2023</div>
+        <div class="study-journal">Diseases of the Colon &amp; Rectum · 2026 · 69(3):346–359</div>
+        <p class="study-abstract">A landmark consensus from ASCRS, ICS, IUGA, AUGS, and APTA establishing the evidence base for pelvic floor physiotherapy in obstructed defecation and rectal prolapse — reinforcing physiotherapy as a core part of treatment alongside surgery.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41677229/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card" data-tags="outcomes technique">
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span><span class="s-tag technique">Technique</span></div>
+        <div class="study-title">MRI Biomarker of Muscle Composition Is Associated With Severity of Pelvic Organ Prolapse</div>
+        <div class="study-authors">Neshatian L, Lam JP, Gurland BH, Liang T, Becker L, Sheth VR</div>
+        <div class="study-journal">Techniques in Coloproctology · 2022 · 26(9):725–733</div>
+        <p class="study-abstract">Using MRI-based muscle composition analysis, this study identified a novel biomarker associated with prolapse severity — potentially helping predict which patients face higher risk and how treatment should be individualised.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/35727428/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card" data-tags="outcomes lifestyle">
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span><span class="s-tag lifestyle">Lifestyle</span></div>
+        <div class="study-title">Increased Grades of Rectal Intussusception: Role of Decline in Pelvic Floor Integrity and Association With Dyssynergic Defecation</div>
+        <div class="study-authors">Neshatian L, Triadafilopoulos G, Wallace S, Jawahar A, Sheth V, Shen S, Gurland B</div>
+        <div class="study-journal">American Journal of Gastroenterology · 2024 · 119(5):946–956</div>
+        <p class="study-abstract">This study linked higher grades of rectal intussusception to declining pelvic floor integrity and dyssynergic defecation — a condition where the pelvic floor muscles fail to coordinate properly during bowel movements. The findings highlight how bowel dysfunction and prolapse are deeply connected.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/37975595/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card" data-tags="outcomes qol">
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span><span class="s-tag qol">Quality of life</span></div>
+        <div class="study-title">Rectal Prolapse Repair Improves Bowel Symptoms in Women With Psychiatric Disorders: A Cohort Analysis of a Single-Center Registry</div>
+        <div class="study-authors">Rajasingh CM, Earley M, Akeel NY, Bungo CP, Au Hoy SL, Lamothe D, Neshatian L, Gurland BH</div>
+        <div class="study-journal">Diseases of the Colon &amp; Rectum · 2025 · 68(12):1443–1450</div>
+        <p class="study-abstract">Patients with psychiatric disorders are often underrepresented in surgical research. This cohort study showed that rectal prolapse repair significantly improves bowel symptoms in this population, supporting equitable access to surgical care regardless of mental health history.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/40970548/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card" data-tags="outcomes qol">
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span><span class="s-tag qol">Quality of life</span></div>
+        <div class="study-title">Distinct Phenotypes of Full-Thickness Rectal Prolapse in Women: A Comparison of Defecation-Only and Spontaneous Presentations</div>
+        <div class="study-authors">Zhou Z, Earley M, Hoy SA, Sheth VR, Gurland B, Neshatian L</div>
+        <div class="study-journal">Neurogastroenterology &amp; Motility · 2026 · 38(2):e70265</div>
+        <p class="study-abstract">Not all rectal prolapse is the same. This study identified two distinct clinical phenotypes — prolapse occurring only during defecation versus spontaneous prolapse — and compared their presentations and associated symptoms, with direct implications for tailored treatment planning.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41708524/" target="_blank" class="study-link">View on PubMed →</a>
+      </div>
+
+      <div class="study-card featured" data-tags="outcomes qol technique">
+        <div class="study-badge delphi">International Delphi Consensus</div>
+        <div class="study-tags"><span class="s-tag outcomes">Outcomes</span><span class="s-tag technique">Technique</span><span class="s-tag qol">Quality of life</span></div>
+        <div class="study-title">Clinician and Patient Stakeholders Prioritize Rectal Prolapse Research Themes Through an International Delphi Process</div>
+        <div class="study-authors">Gurland BH, Au Hoy S, Bordeianou L, Hainsworth A, Thorsen AJ, et al.; Pelvic Floor Disorders Consortium</div>
+        <div class="study-journal">Presented at ASCRS Annual Meeting · May 2025 · Baltimore, MD</div>
+        <p class="study-abstract">In one of the largest international consensus efforts on rectal prolapse, 372 clinicians and 26 patients across 4 Delphi rounds identified 22 priority research themes. Long-term functional outcomes, recurrence treatment, and the benefit of pelvic floor physical therapy ranked highest. Notably, 78.9% of patients — but fewer clinicians — agreed that patient educational tools are a top research priority.</p>
+        <a href="#contact" class="study-link">Contact us to learn more →</a>
+      </div>
+
+      <div class="study-card" data-tags="lifestyle qol">
+        <div class="study-badge emerging">Conference Presentation</div>
+        <div class="study-tags"><span class="s-tag lifestyle">Lifestyle</span><span class="s-tag qol">Quality of life</span></div>
+        <div class="study-title">The LEAP Study: Exploring Lifestyle, Exercise and Prolapse Through Patient and Clinician Perspectives</div>
+        <div class="study-authors">Colbran R, Ko B, Neshatian L, Gurland BH — Stanford University</div>
+        <div class="study-journal">Presented at ASCRS Annual Meeting · May 2026 · Tampa, FL</div>
+        <p class="study-abstract">This survey study of 101 clinicians and 33 patients found that prolapse negatively impacts multiple pillars of lifestyle medicine — with exercise most affected. While 74.3% of clinicians believe certain exercises worsen prolapse, 68.3% do not restrict activity before surgery. Barriers to lifestyle discussions included time constraints (73%), competing priorities (81%), and lack of training (31%). Evidence-based guidance on safe activities is urgently needed.</p>
+        <a href="#contact" class="study-link">Contact us to learn more →</a>
+      </div>
+
+      <div class="study-card" data-tags="lifestyle technique">
+        <div class="study-badge emerging">Conference Presentation</div>
+        <div class="study-tags"><span class="s-tag lifestyle">Lifestyle</span><span class="s-tag technique">Technique</span></div>
+        <div class="study-title">Perspectives on Pelvic Health Physical Therapy in Rectal Prolapse: A Mixed-Methods Study of Patients and Clinicians</div>
+        <div class="study-authors">Ko B, Colbran R, Neshatian L, Li MY, Barten J, Gurland BH — Stanford University</div>
+        <div class="study-journal">In preparation · Stanford University</div>
+        <p class="study-abstract">Drawing on surveys (patients n=30, clinicians n=91) and qualitative interviews, this study found that while clinicians consider pelvic health physical therapy important or very important, lack of perceived efficacy and severe access constraints — including wait times exceeding one year — limit its use. Patient presentation significantly shapes clinician decision-making about referral.</p>
+        <a href="#contact" class="study-link">Contact us to learn more →</a>
+      </div>
+
+      <div class="study-card" data-tags="lifestyle qol">
+        <div class="study-badge emerging">Qualitative Research</div>
+        <div class="study-tags"><span class="s-tag lifestyle">Lifestyle</span><span class="s-tag qol">Quality of life</span></div>
+        <div class="study-title">Lifestyle Medicine and Pelvic Floor Physical Therapy in Rectal Prolapse: A Qualitative Study of Patient and Clinician Perspectives</div>
+        <div class="study-authors">Colbran R, Ko B, Neshatian L, Gurland BH — Stanford University</div>
+        <div class="study-journal">In preparation · Stanford University · 5 patients, 8 clinicians, 333 coded excerpts</div>
+        <p class="study-abstract">This qualitative study identified five themes across 13 patient and clinician interviews: PFPT is valued but inconsistently integrated; physical activity guidance is vague and individualised; broader lifestyle medicine pillars are rarely addressed in clinical care; care pathways are highly heterogeneous; and both patients and clinicians agree on the need for multidisciplinary, accessible, proactive non-operative support. Social connection was identified as highly important to patients but almost never raised by clinicians.</p>
+        <a href="#contact" class="study-link">Contact us to learn more →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARTICIPATE IN RESEARCH -->
+<section id="participate">
+  <div class="section-inner">
+
+    <!-- Intro row -->
+    <div class="participate-inner reveal">
+      <div class="participate-text">
+        <span class="s-label">Be part of the solution</span>
+        <h2 class="s-title">Your experience matters to research</h2>
+        <p>We are still in the early stages of understanding how lifestyle, exercise, and psychological wellbeing affect rectal prolapse. The honest truth is that <strong>we need patients to help build this evidence</strong> — through surveys, interviews, registry participation, and long-term follow-up.</p>
+        <p>Our international Delphi consensus involving 372 clinicians found that <strong>long-term functional outcomes are the single highest research priority</strong> for prolapse care. That evidence only becomes possible when patients agree to be followed over time. And in that same study, <strong>78.9% of patients — far more than clinicians — identified patient educational tools as a top priority.</strong> Your voice changes what the field pays attention to.</p>
+        <div class="participate-reasons">
+          <div class="participate-reason">
+            <div class="participate-reason-icon">📋</div>
+            <div class="participate-reason-text"><strong>Complete surveys</strong>Validated questionnaires about your symptoms, quality of life, and bowel function before and after treatment are the backbone of outcomes research.</div>
+          </div>
+          <div class="participate-reason">
+            <div class="participate-reason-icon">🗣️</div>
+            <div class="participate-reason-text"><strong>Share your story</strong>Qualitative interviews capture what surveys miss — the lived experience of prolapse, the barriers you faced, what actually helped. Our ongoing work depends on patients willing to talk.</div>
+          </div>
+          <div class="participate-reason">
+            <div class="participate-reason-icon">📈</div>
+            <div class="participate-reason-text"><strong>Join a longitudinal registry</strong>Following patients over years — not months — is how we learn whether surgery holds, which lifestyle changes last, and what long-term bowel function really looks like.</div>
+          </div>
+        </div>
+      </div>
+      <div class="participate-cta-box">
+        <h3>Stanford Colorectal Surgery research</h3>
+        <p>We are actively recruiting patients with rectal prolapse and bowel dysfunction. Participation is voluntary and can be as simple as a 10-minute survey.</p>
+        <div class="stat-row">
+          <div class="participate-stat">
+            <div class="participate-stat-num">467+</div>
+            <div class="participate-stat-label">Patients in our outcomes registry</div>
+          </div>
+          <div class="participate-stat">
+            <div class="participate-stat-num">US</div>
+            <div class="participate-stat-label">Multicenter study recruiting</div>
+          </div>
+          <div class="participate-stat">
+            <div class="participate-stat-num">Int'l</div>
+            <div class="participate-stat-label">Prolapse study recruiting</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;">Interested in participating — whether in a survey, interview, or registry? Reach out and we will match you with the right study.</p>
+        <a href="#contact" class="btn-participate">Express interest in participating →</a>
+      </div>
+    </div>
+
+    <!-- ONGOING STUDIES -->
+    <div style="margin-top:3rem;">
+      <div class="lm-divider reveal">
+        <div class="lm-divider-line"></div>
+        <span class="lm-divider-label">Ongoing studies — open to patients</span>
+        <div class="lm-divider-line"></div>
+      </div>
+
+      <div class="ongoing-grid reveal">
+
+        <!-- Study 1: US Multicenter Rectopexy -->
+        <div class="ongoing-card">
+          <div class="ongoing-card-head">
+            <div class="ongoing-status active">Actively enrolling</div>
+            <div class="ongoing-scope">🇺🇸 United States · Multicenter</div>
+          </div>
+          <h3 class="ongoing-title">Long-Term Outcomes After Rectopexy: A US Multicenter Study</h3>
+          <p class="ongoing-body">This multisite US study is following patients who have undergone rectopexy to understand long-term bowel function, quality of life, and recurrence. It addresses the single highest-priority research theme identified by our international Delphi consensus.</p>
+          <div class="ongoing-details">
+            <div class="ongoing-detail"><span class="od-label">Who can participate</span><span class="od-value">Patients who have had or are planning rectopexy surgery</span></div>
+            <div class="ongoing-detail"><span class="od-label">What it involves</span><span class="od-value">Periodic validated questionnaires about bowel function and quality of life</span></div>
+            <div class="ongoing-detail"><span class="od-label">Time commitment</span><span class="od-value">Short surveys at regular intervals over several years</span></div>
+            <div class="ongoing-detail"><span class="od-label">Lead institution</span><span class="od-value">Stanford University — Pelvic Floor Disorders Consortium</span></div>
+          </div>
+          <a href="#contact" class="ongoing-cta">Register your interest ↗ <span class="od-placeholder">— signup link coming soon</span></a>
+        </div>
+
+        <!-- Study 2: International Rectal Prolapse Study -->
+        <div class="ongoing-card">
+          <div class="ongoing-card-head">
+            <div class="ongoing-status active">Actively enrolling</div>
+            <div class="ongoing-scope">🌍 International · Multiple countries</div>
+          </div>
+          <h3 class="ongoing-title">International Rectal Prolapse Outcomes Study</h3>
+          <p class="ongoing-body">A collaborative international study examining surgical outcomes, quality of life, and patient-reported experience across multiple countries and healthcare systems. This study aims to establish the first large-scale international dataset for rectal prolapse outcomes research.</p>
+          <div class="ongoing-details">
+            <div class="ongoing-detail"><span class="od-label">Who can participate</span><span class="od-value">Patients with rectal prolapse at participating international centres</span></div>
+            <div class="ongoing-detail"><span class="od-label">What it involves</span><span class="od-value">Validated symptom surveys and follow-up questionnaires</span></div>
+            <div class="ongoing-detail"><span class="od-label">Time commitment</span><span class="od-value">Surveys at baseline, 6 months, and annually</span></div>
+            <div class="ongoing-detail"><span class="od-label">Coordination</span><span class="od-value">Pelvic Floor Disorders Consortium — ASCRS</span></div>
+          </div>
+          <a href="#contact" class="ongoing-cta">Register your interest ↗ <span class="od-placeholder">— signup link coming soon</span></a>
+        </div>
+
+        <!-- PFDC Link card -->
+        <div class="ongoing-card pfdc-card">
+          <div class="ongoing-card-head">
+            <div class="ongoing-status consortium">Professional consortium</div>
+            <div class="ongoing-scope">🌐 International · ASCRS</div>
+          </div>
+          <h3 class="ongoing-title">ASCRS Pelvic Floor Disorders Consortium</h3>
+          <p class="ongoing-body">The Pelvic Floor Disorders Consortium (PFDC) is an international multidisciplinary group of colorectal surgeons, urogynecologists, gastroenterologists, and physical therapists dedicated to advancing research and care in pelvic floor disorders — including rectal prolapse. Our team is part of this consortium.</p>
+          <div class="ongoing-details">
+            <div class="ongoing-detail"><span class="od-label">Who it serves</span><span class="od-value">Patients, clinicians, and researchers interested in pelvic floor disorders</span></div>
+            <div class="ongoing-detail"><span class="od-label">What it offers</span><span class="od-value">Research collaboration, clinical guidelines, patient advocacy, and education</span></div>
+            <div class="ongoing-detail"><span class="od-label">Patient involvement</span><span class="od-value">Patient perspectives are actively integrated into PFDC research priorities</span></div>
+          </div>
+          <a href="https://fascrs.org/healthcare-providers/education/pelvic-floor-disorders-consortium" target="_blank" class="ongoing-cta pfdc-link">Visit the PFDC website →</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <span class="s-label">Get in touch</span>
+      <h2 class="s-title reveal">Have questions?</h2>
+      <p class="s-lead reveal">If you have questions about your symptoms, a referral, or our research — we are here to help.</p>
+      <div class="contact-actions reveal">
+        <a href="/cdn-cgi/l/email-protection#dfa6b0aaad9fbab2beb6b3f1bcb0b2" class="btn-primary" style="color:var(--teal-dark)">Email us</a>
+        <a href="tel:+10000000000" class="btn-ghost">Call the clinic</a>
+      </div>
+      <p class="contact-note reveal">This resource is for educational purposes only and does not replace personalised medical advice. Always consult your clinical team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">RENEW</div>
+      <div class="footer-brand-tag">Bowel health, prolapse &amp; pelvic floor surgery</div>
+      <p>A patient education resource built on research, evidence, and the belief that understanding your body is the first step toward healing it.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="#what-is">What is prolapse?</a>
+      <a href="#testing">Diagnostic testing</a>
+      <a href="#treatment">Treatment options</a>
+      <a href="#tools">Symptom scores</a>
+      <a href="#risks">Surgical risks</a>
+      <a href="#calculator">Risk calculator</a>
+      <a href="#preparing">Preparing for surgery</a>
+      <a href="#life-after">Life after surgery</a>
+      <a href="#research">Our research</a>
+      <a href="#participate">Participate in research</a>
+    </div>
+    <div class="footer-col">
+      <h4>Animations</h4>
+      <a href="#" onclick="openModal('prolapse');return false;">Prolapse &amp; Incontinence</a>
+      <a href="#" onclick="openModal('bowel');return false;">Bowel Health &amp; Constipation</a>
+      <a href="#" onclick="openModal('rectopexy');return false;">Rectopexy Surgery</a>
+      <a href="#contact">Contact us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 RENEW · Patient Education Resource</span>
+    <span>For educational purposes only. Not a substitute for clinical advice.</span>
+  </div>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="overlay" id="overlay" onclick="closeOutside(event)">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div id="modalMedia"></div>
+    <h3 id="modalTitle"></h3>
+    <p id="modalBody"></p>
+  </div>
+</div>
+
+<script>
+  const anims = {
+    prolapse: {
+      title: 'Prolapse & Incontinence',
+      body: 'This animation explains how rectal prolapse develops, what it looks like, and how it relates to symptoms of bowel incontinence and pelvic pressure. A helpful starting point for understanding your diagnosis.',
+      vimeoId: '743819969',
+      vimeoH: '0ab020862e'
+    },
+    bowel: {
+      title: 'Bowel Health & Constipation',
+      body: 'Learn how fiber, hydration, toilet posture, and bowel habits affect your pelvic floor. This animation explains why chronic straining causes harm and what simple changes make a real difference.',
+      vimeoId: '1175949349',
+      vimeoH: null
+    },
+    rectopexy: {
+      title: 'Rectopexy Surgery',
+      body: 'A step-by-step guide to laparoscopic rectopexy — the keyhole procedure used to correct rectal prolapse. Includes what to expect from the operation and the immediate recovery period.',
+      vimeoId: null,
+      vimeoH: null
+    }
+  };
+
+  function openModal(id) {
+    const a = anims[id];
+    document.getElementById('modalTitle').textContent = a.title;
+    document.getElementById('modalBody').textContent = a.body;
+    const mediaEl = document.getElementById('modalMedia');
+    if (a.vimeoId) {
+      const hParam = a.vimeoH ? '&h=' + a.vimeoH : '';
+      mediaEl.innerHTML = '<div class="modal-video-wrap"><iframe src="https://player.vimeo.com/video/' + a.vimeoId + '?badge=0&autopause=0&player_id=0&app_id=58479' + hParam + '" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="' + a.title + '"></iframe></div>';
+    } else {
+      mediaEl.innerHTML = '<div class="modal-placeholder"><div style="font-size:48px">&#9654;</div><p>Animation coming soon</p></div>';
+    }
+    document.getElementById('overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalMedia').innerHTML = '';
+    document.getElementById('overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeOutside(e) {
+    if (e.target === document.getElementById('overlay')) closeModal();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  function filterStudies(tag, btn) {
+    document.querySelectorAll('.f-btn').forEach(function(b) { b.classList.remove('on'); });
+    btn.classList.add('on');
+    document.querySelectorAll('.study-card').forEach(function(c) {
+      c.style.display = (tag === 'all' || c.dataset.tags.includes(tag)) ? '' : 'none';
+    });
+  }
+
+  var total = 10;
+  function tick(el) {
+    el.classList.toggle('done');
+    el.textContent = el.classList.contains('done') ? '\u2713' : '';
+    var done = document.querySelectorAll('.cl-box.done').length;
+    document.getElementById('progText').textContent = done + ' of ' + total;
+    document.getElementById('progBar').style.width = (done / total * 100) + '%';
+  }
+
+  function toggleMob() {
+    document.getElementById('mobMenu').classList.toggle('open');
+  }
+
+  // TOOL TABS
+  function showTool(id, btn) {
+    document.querySelectorAll('.tool-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.tool-tab').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('tool-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // WEXNER
+  var wexnerAnswers = [null, null, null, null, null];
+  function wexnerSet(q, val, el) {
+    wexnerAnswers[q] = val;
+    var parent = el.parentElement;
+    parent.querySelectorAll('.tool-q-option').forEach(function(o) { o.classList.remove('sel'); });
+    el.classList.add('sel');
+    wexnerCalc();
+  }
+  function wexnerCalc() {
+    var answered = wexnerAnswers.filter(function(v) { return v !== null; }).length;
+    document.getElementById('wexner-progress').textContent = answered + ' of 5 answered';
+    if (answered < 5) return;
+    var total = wexnerAnswers.reduce(function(a, b) { return a + b; }, 0);
+    var el = document.getElementById('wexner-score');
+    var lbl = document.getElementById('wexner-score-label');
+    var bar = document.getElementById('wexner-bar');
+    var interp = document.getElementById('wexner-interp');
+    el.textContent = total;
+    var pct = Math.round((total / 20) * 100);
+    bar.style.width = pct + '%';
+    if (total === 0) {
+      el.style.color = '#2e7d32'; lbl.style.color = '#2e7d32'; lbl.textContent = 'Perfect continence';
+      bar.style.background = '#4caf50';
+      interp.style.background = '#e8f5e9'; interp.style.borderColor = '#4caf50';
+      interp.textContent = 'A score of 0 indicates perfect continence — no episodes of involuntary leakage of any kind.';
+    } else if (total <= 8) {
+      el.style.color = '#2e7d32'; lbl.style.color = '#2e7d32'; lbl.textContent = 'Mild incontinence';
+      bar.style.background = '#66bb6a';
+      interp.style.background = '#e8f5e9'; interp.style.borderColor = '#66bb6a';
+      interp.textContent = 'Scores of 1–8 indicate mild fecal incontinence. Symptoms may be occasional or minor. Conservative measures — dietary changes, pelvic floor physiotherapy, and bowel habit optimisation — are often effective at this level.';
+    } else if (total <= 14) {
+      el.style.color = var_rust(); lbl.style.color = var_rust(); lbl.textContent = 'Moderate incontinence';
+      bar.style.background = '#ef6c00';
+      interp.style.background = '#fff3e0'; interp.style.borderColor = '#ef6c00';
+      interp.textContent = 'Scores of 9–14 indicate moderate fecal incontinence with meaningful impact on daily life. Further assessment and treatment — including specialist review and pelvic floor physiotherapy — is recommended.';
+    } else {
+      el.style.color = '#a32d2d'; lbl.style.color = '#a32d2d'; lbl.textContent = 'Severe incontinence';
+      bar.style.background = '#c62828';
+      interp.style.background = '#fce8e8'; interp.style.borderColor = '#c62828';
+      interp.textContent = 'Scores of 15–20 indicate severe fecal incontinence with significant quality of life impairment. Specialist assessment is strongly recommended. Effective treatments are available — do not suffer in silence.';
+    }
+  }
+  function wexnerReset() {
+    wexnerAnswers = [null, null, null, null, null];
+    document.querySelectorAll('#tool-wexner .tool-q-option').forEach(function(o) { o.classList.remove('sel'); });
+    document.getElementById('wexner-score').textContent = '—';
+    document.getElementById('wexner-score').style.color = 'var(--teal)';
+    document.getElementById('wexner-score-label').textContent = 'Answer all 5 questions';
+    document.getElementById('wexner-score-label').style.color = 'var(--text-3)';
+    document.getElementById('wexner-bar').style.width = '0%';
+    document.getElementById('wexner-bar').style.background = 'var(--teal-mid)';
+    document.getElementById('wexner-interp').style.background = 'var(--warm-off)';
+    document.getElementById('wexner-interp').style.borderColor = 'var(--border)';
+    document.getElementById('wexner-interp').textContent = 'Your score and interpretation will appear here as you answer.';
+    document.getElementById('wexner-progress').textContent = '0 of 5 answered';
+  }
+
+  // ODS
+  var odsAnswers = [null, null, null, null, null, null, null];
+  function odsSet(q, val, el) {
+    odsAnswers[q] = val;
+    var parent = el.parentElement;
+    parent.querySelectorAll('.tool-q-option').forEach(function(o) { o.classList.remove('sel'); });
+    el.classList.add('sel');
+    odsCalc();
+  }
+  function odsCalc() {
+    var answered = odsAnswers.filter(function(v) { return v !== null; }).length;
+    document.getElementById('ods-progress').textContent = answered + ' of 7 answered';
+    if (answered < 7) return;
+    var total = odsAnswers.reduce(function(a, b) { return a + b; }, 0);
+    var el = document.getElementById('ods-score');
+    var lbl = document.getElementById('ods-score-label');
+    var bar = document.getElementById('ods-bar');
+    var interp = document.getElementById('ods-interp');
+    el.textContent = total;
+    var pct = Math.round((total / 31) * 100);
+    bar.style.width = pct + '%';
+    if (total <= 8) {
+      el.style.color = '#2e7d32'; lbl.style.color = '#2e7d32'; lbl.textContent = 'Mild ODS';
+      bar.style.background = '#66bb6a';
+      interp.style.background = '#e8f5e9'; interp.style.borderColor = '#66bb6a';
+      interp.textContent = 'Scores of 0–8 indicate mild obstructed defecation. Dietary changes, hydration, and toilet posture adjustments are usually effective first steps. A score in this range warrants discussion with your clinical team.';
+    } else if (total <= 13) {
+      el.style.color = var_rust(); lbl.style.color = var_rust(); lbl.textContent = 'Moderate ODS';
+      bar.style.background = '#ef6c00';
+      interp.style.background = '#fff3e0'; interp.style.borderColor = '#ef6c00';
+      interp.textContent = 'Scores of 9–13 indicate moderate obstructed defecation with notable impact on daily life. Specialist assessment including anorectal physiology testing and pelvic floor physiotherapy is typically recommended at this level.';
+    } else {
+      el.style.color = '#a32d2d'; lbl.style.color = '#a32d2d'; lbl.textContent = 'Severe ODS';
+      bar.style.background = '#c62828';
+      interp.style.background = '#fce8e8'; interp.style.borderColor = '#c62828';
+      interp.textContent = 'Scores of 14 or above indicate severe obstructed defecation. This level of symptom burden significantly affects quality of life and warrants prompt specialist review. Effective treatments are available — both conservative and surgical.';
+    }
+  }
+  function odsReset() {
+    odsAnswers = [null, null, null, null, null, null, null];
+    document.querySelectorAll('#tool-ods .tool-q-option').forEach(function(o) { o.classList.remove('sel'); });
+    document.getElementById('ods-score').textContent = '—';
+    document.getElementById('ods-score').style.color = 'var(--teal)';
+    document.getElementById('ods-score-label').textContent = 'Answer all 7 questions';
+    document.getElementById('ods-score-label').style.color = 'var(--text-3)';
+    document.getElementById('ods-bar').style.width = '0%';
+    document.getElementById('ods-bar').style.background = 'var(--teal-mid)';
+    document.getElementById('ods-interp').style.background = 'var(--warm-off)';
+    document.getElementById('ods-interp').style.borderColor = 'var(--border)';
+    document.getElementById('ods-interp').textContent = 'Your score and interpretation will appear here as you answer.';
+    document.getElementById('ods-progress').textContent = '0 of 7 answered';
+  }
+
+  function var_rust() { return '#b85c38'; }
+
+  // CALC TAB SWITCHING
+  function showCalc(id, btn) {
+    document.querySelectorAll('.calc-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.calc-tab').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('calc-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // COMPLICATION CALCULATOR
+  var cAnswers = { age:null, bmi:null, smoke:null, dm:null, asa:null, frail:null, prior:null, opioid:null, ctd:null };
+  var cLabels = { age:'Age', bmi:'BMI', smoke:'Smoking status', dm:'Diabetes', asa:'ASA grade', frail:'Frailty', prior:'Prior abdominal surgery', opioid:'Chronic opioid use', ctd:'Connective tissue disorder' };
+  var cMessages = {
+    high: { badge:'Higher risk', cls:'rh', title:'Elevated complication risk profile', body:'Your answers indicate several factors associated with higher surgical risk. This does not mean surgery is not appropriate — it means your care team will plan your procedure carefully, optimise modifiable factors beforehand, and may discuss a higher level of perioperative monitoring or support. Many of the factors identified are modifiable — addressing them before surgery can meaningfully improve your outcome.' },
+    mod:  { badge:'Moderate risk', cls:'rm', title:'Moderate complication risk profile', body:'Your answers indicate some factors that may modestly increase surgical risk. Most patients in this category do well with laparoscopic rectopexy. Your surgical team will review modifiable factors — smoking, diabetes control, BMI, opioid use — and discuss optimisation strategies with you before the procedure.' },
+    low:  { badge:'Lower risk', cls:'rl', title:'Lower complication risk profile', body:'Your answers suggest a generally favourable risk profile for pelvic floor surgery. General surgical risks such as bleeding, infection, and anaesthetic complications remain present but are expected to be in the lower range reported in the literature. Continue with lifestyle optimisation and attend your pre-operative assessment as planned.' }
+  };
+
+  function cSet(field, level, el) {
+    cAnswers[field] = level;
+    el.parentElement.querySelectorAll('.calc-opt').forEach(function(o) { o.classList.remove('on'); });
+    el.classList.add('on');
+    cCalc();
+  }
+
+  function cCalc() {
+    var answered = Object.values(cAnswers).filter(function(v) { return v !== null; }).length;
+    document.getElementById('comp-prog').textContent = answered + ' of 9 answered';
+    if (answered < 9) return;
+    var highFactors = [], modFactors = [], goodFactors = [], score = 0;
+    Object.keys(cAnswers).forEach(function(k) {
+      var v = cAnswers[k];
+      if (v === 'high' || v === 'vhigh') { score += 2; highFactors.push(cLabels[k]); }
+      else if (v === 'mod') { score += 1; modFactors.push(cLabels[k]); }
+      else { goodFactors.push(cLabels[k]); }
+    });
+    var level = score >= 5 ? 'high' : score >= 2 ? 'mod' : 'low';
+    renderResult('comp', cMessages[level], highFactors, modFactors, goodFactors);
+  }
+
+  function resetCalc(which) {
+    if (which === 'comp') {
+      Object.keys(cAnswers).forEach(function(k) { cAnswers[k] = null; });
+      document.querySelectorAll('#calc-comp .calc-opt').forEach(function(o) { o.classList.remove('on'); });
+      document.getElementById('comp-waiting').style.display = 'block';
+      document.getElementById('comp-output').style.display = 'none';
+      document.getElementById('comp-prog').textContent = '0 of 9 answered';
+    } else {
+      Object.keys(rAnswers).forEach(function(k) { rAnswers[k] = null; });
+      document.querySelectorAll('#calc-rec .calc-opt').forEach(function(o) { o.classList.remove('on'); });
+      document.getElementById('rec-waiting').style.display = 'block';
+      document.getElementById('rec-output').style.display = 'none';
+      document.getElementById('rec-prog').textContent = '0 of 8 answered';
+    }
+  }
+
+  function renderResult(pfx, msg, highF, modF, goodF) {
+    document.getElementById(pfx + '-waiting').style.display = 'none';
+    document.getElementById(pfx + '-output').style.display = 'block';
+    var badge = document.getElementById(pfx + '-badge');
+    badge.textContent = msg.badge; badge.className = 'calc-risk-badge ' + msg.cls;
+    document.getElementById(pfx + '-title').textContent = msg.title;
+    document.getElementById(pfx + '-body').textContent = msg.body;
+    var fbox = document.getElementById(pfx + '-factors-box');
+    var flist = document.getElementById(pfx + '-factors-list');
+    var pbox = document.getElementById(pfx + '-positive-box');
+    var plist = document.getElementById(pfx + '-positive-list');
+    var concerns = highF.concat(modF);
+    flist.innerHTML = '';
+    if (concerns.length > 0) {
+      fbox.style.display = 'block';
+      concerns.forEach(function(f) {
+        var c = highF.indexOf(f) >= 0 ? 'fd-r' : 'fd-a';
+        flist.innerHTML += '<div class="calc-fi"><div class="calc-fd ' + c + '"></div>' + f + '</div>';
+      });
+    } else { fbox.style.display = 'none'; }
+    plist.innerHTML = '';
+    if (goodF.length > 0) {
+      pbox.style.display = 'block';
+      goodF.forEach(function(f) {
+        plist.innerHTML += '<div class="calc-fi"><div class="calc-fd fd-g"></div>' + f + '</div>';
+      });
+    } else { pbox.style.display = 'none'; }
+  }
+
+  // RECURRENCE CALCULATOR
+  var rAnswers = { age:null, approach:null, prev:null, ctd:null, smoke:null, constip:null, opioid:null, bmi:null };
+  var rLabels = { age:'Age / lifetime horizon', approach:'Surgical approach', prev:'Primary vs recurrent repair', ctd:'Connective tissue disorder', smoke:'Smoking', constip:'Constipation / straining', opioid:'Chronic opioid use', bmi:'BMI' };
+  var rMessages = {
+    high: { badge:'Higher recurrence risk', cls:'rh', title:'Elevated recurrence risk profile', body:'Your answers indicate several factors associated with higher recurrence risk. The baseline rates — ~15% for abdominal rectopexy and ~30% for perineal procedures — may be towards the higher end for you. Importantly, several factors are modifiable. Addressing constipation, stopping smoking, attending physiotherapy, and managing opioid use before surgery all have potential to meaningfully improve your long-term outcome.' },
+    mod:  { badge:'Moderate recurrence risk', cls:'rm', title:'Moderate recurrence risk profile', body:'Your answers suggest a moderate recurrence risk profile. The literature baseline rates apply — approximately 15% for abdominal rectopexy and 30% for perineal procedures. You have some factors that warrant attention alongside some protective factors. Discuss with your surgeon which are modifiable before your procedure.' },
+    low:  { badge:'Lower recurrence risk', cls:'rl', title:'Lower recurrence risk profile', body:'Your answers suggest a generally favourable recurrence risk profile relative to the published literature baseline of ~15% (abdominal rectopexy) and ~30% (perineal procedures). You have several protective factors in place. Maintaining physiotherapy, keeping bowel habits regular, and attending long-term follow-up appointments will help protect your repair over time.' }
+  };
+
+  function rSet(field, level, el) {
+    rAnswers[field] = level;
+    el.parentElement.querySelectorAll('.calc-opt').forEach(function(o) { o.classList.remove('on'); });
+    el.classList.add('on');
+    rCalc();
+  }
+
+  function rCalc() {
+    var answered = Object.values(rAnswers).filter(function(v) { return v !== null; }).length;
+    document.getElementById('rec-prog').textContent = answered + ' of 8 answered';
+    if (answered < 8) return;
+    var highFactors = [], modFactors = [], goodFactors = [], score = 0;
+    Object.keys(rAnswers).forEach(function(k) {
+      var v = rAnswers[k];
+      if (v === 'high') { score += 2; highFactors.push(rLabels[k]); }
+      else if (v === 'mod') { score += 1; modFactors.push(rLabels[k]); }
+      else { goodFactors.push(rLabels[k]); }
+    });
+    var level = score >= 5 ? 'high' : score >= 2 ? 'mod' : 'low';
+    renderResult('rec', rMessages[level], highFactors, modFactors, goodFactors);
+  }
+
+  function togglePillar(el) {
+    var isOpen = el.classList.contains('open');
+    document.querySelectorAll('.lm-pillar.open').forEach(function(p) { p.classList.remove('open'); });
+    if (!isOpen) el.classList.add('open');
+  }
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+</script>
+
+<!-- CHAT WIDGET -->
+<style>
+  #chat-btn {
+    position:fixed; bottom:24px; right:24px; z-index:500;
+    width:56px; height:56px; border-radius:50%;
+    background:var(--teal); border:none; cursor:pointer;
+    box-shadow:0 4px 20px rgba(45,125,111,0.4);
+    display:flex; align-items:center; justify-content:center;
+    transition:all .25s;
+  }
+  #chat-btn:hover { background:var(--teal-dark); transform:scale(1.08); }
+  #chat-btn svg { width:24px; height:24px; }
+  #chat-btn .chat-badge {
+    position:absolute; top:-3px; right:-3px;
+    width:16px; height:16px; background:var(--gold);
+    border-radius:50%; border:2px solid white;
+    display:none;
+  }
+  #chat-btn .chat-badge.show { display:block; }
+
+  #chat-window {
+    position:fixed; bottom:90px; right:24px; z-index:500;
+    width:380px; max-height:580px;
+    background:white; border-radius:20px;
+    box-shadow:0 8px 40px rgba(15,53,48,0.18);
+    display:none; flex-direction:column;
+    overflow:hidden; border:1px solid var(--border);
+    font-family:'Plus Jakarta Sans',sans-serif;
+  }
+  #chat-window.open { display:flex; }
+
+  .chat-head {
+    background:var(--teal-deep); padding:16px 18px;
+    display:flex; align-items:center; gap:12px;
+    flex-shrink:0;
+  }
+  .chat-head-avatar {
+    width:36px; height:36px; background:var(--teal);
+    border-radius:50%; display:flex; align-items:center;
+    justify-content:center; flex-shrink:0; font-size:16px;
+  }
+  .chat-head-info { flex:1; }
+  .chat-head-name { font-size:14px; font-weight:600; color:white; }
+  .chat-head-status { font-size:11.5px; color:rgba(255,255,255,0.6); display:flex; align-items:center; gap:5px; }
+  .chat-head-status::before { content:''; width:6px; height:6px; background:#4caf50; border-radius:50%; display:inline-block; }
+  .chat-close { background:none; border:none; color:rgba(255,255,255,0.6); cursor:pointer; font-size:20px; padding:0; line-height:1; transition:color .2s; }
+  .chat-close:hover { color:white; }
+
+  .chat-messages {
+    flex:1; overflow-y:auto; padding:16px;
+    display:flex; flex-direction:column; gap:12px;
+    min-height:200px; max-height:380px;
+  }
+
+  .chat-msg { display:flex; gap:8px; align-items:flex-start; }
+  .chat-msg.user { flex-direction:row-reverse; }
+
+  .chat-msg-avatar {
+    width:28px; height:28px; border-radius:50%;
+    background:var(--teal-light); display:flex;
+    align-items:center; justify-content:center;
+    font-size:13px; flex-shrink:0;
+  }
+  .chat-msg.user .chat-msg-avatar { background:var(--cream); }
+
+  .chat-bubble {
+    max-width:78%; padding:10px 13px;
+    border-radius:14px; font-size:13.5px;
+    line-height:1.6; color:var(--text-1);
+    background:var(--warm-off);
+  }
+  .chat-msg.user .chat-bubble {
+    background:var(--teal); color:white;
+    border-bottom-right-radius:4px;
+  }
+  .chat-msg.bot .chat-bubble { border-bottom-left-radius:4px; }
+
+  .chat-typing {
+    display:none; align-items:center; gap:8px; padding:0 4px;
+  }
+  .chat-typing.show { display:flex; }
+  .chat-typing-dots { display:flex; gap:4px; }
+  .chat-typing-dots span {
+    width:7px; height:7px; background:var(--teal-mid);
+    border-radius:50%; animation:typingDot 1.2s ease-in-out infinite;
+  }
+  .chat-typing-dots span:nth-child(2) { animation-delay:.2s; }
+  .chat-typing-dots span:nth-child(3) { animation-delay:.4s; }
+  @keyframes typingDot { 0%,60%,100%{transform:translateY(0);opacity:.4} 30%{transform:translateY(-5px);opacity:1} }
+
+  .chat-suggestions {
+    padding:0 14px 10px; display:flex;
+    flex-wrap:wrap; gap:6px;
+  }
+  .chat-suggestion {
+    padding:5px 12px; border-radius:20px;
+    border:1px solid var(--border); background:white;
+    font-size:12px; color:var(--teal); cursor:pointer;
+    transition:all .18s; font-family:'Plus Jakarta Sans',sans-serif;
+  }
+  .chat-suggestion:hover { background:var(--teal-light); border-color:var(--teal-mid); }
+
+  .chat-input-row {
+    padding:12px 14px; border-top:1px solid var(--border);
+    display:flex; gap:8px; align-items:flex-end; flex-shrink:0;
+  }
+  .chat-input {
+    flex:1; border:1.5px solid var(--border); border-radius:20px;
+    padding:8px 14px; font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:13.5px; color:var(--text-1); resize:none;
+    outline:none; max-height:80px; line-height:1.5;
+    transition:border-color .2s;
+  }
+  .chat-input:focus { border-color:var(--teal-mid); }
+  .chat-send {
+    width:36px; height:36px; border-radius:50%;
+    background:var(--teal); border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; transition:all .2s;
+  }
+  .chat-send:hover { background:var(--teal-dark); }
+  .chat-send:disabled { background:var(--teal-mid); cursor:not-allowed; }
+  .chat-send svg { width:16px; height:16px; }
+
+  .chat-disclaimer {
+    padding:6px 14px 10px; font-size:11px;
+    color:var(--text-3); text-align:center; line-height:1.5;
+    flex-shrink:0;
+  }
+
+  @media(max-width:440px){
+    #chat-window { width:calc(100vw - 24px); right:12px; bottom:80px; }
+    #chat-btn { right:16px; bottom:16px; }
+  }
+</style>
+
+<!-- Chat button -->
+<button id="chat-btn" onclick="toggleChat()" aria-label="Open RENEW assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+  <div class="chat-badge" id="chat-badge"></div>
+</button>
+
+<!-- Chat window -->
+<div id="chat-window">
+  <div class="chat-head">
+    <div class="chat-head-avatar">🌿</div>
+    <div class="chat-head-info">
+      <div class="chat-head-name">RENEW Assistant</div>
+      <div class="chat-head-status">Educational resource</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-msg bot">
+      <div class="chat-msg-avatar">🌿</div>
+      <div class="chat-bubble">Hello — I am the RENEW educational assistant. I can answer questions about rectal prolapse, bowel health, pelvic floor surgery, lifestyle medicine, and the topics covered on this site.<br><br>I am here to inform, not to advise on your personal medical situation. For anything specific to your care, please speak with your clinical team.</div>
+    </div>
+  </div>
+
+  <div class="chat-typing" id="chat-typing">
+    <div class="chat-msg-avatar" style="width:28px;height:28px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:13px;">🌿</div>
+    <div class="chat-typing-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="chat-suggestions" id="chat-suggestions">
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">What is rectal prolapse?</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">What does rectopexy involve?</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">How does fiber help my bowel?</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">What is the Wexner score?</button>
+  </div>
+
+  <div class="chat-input-row">
+    <textarea class="chat-input" id="chat-input" placeholder="Ask a question about prolapse or bowel health..." rows="1"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"
+      oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+    <button class="chat-send" id="chat-send-btn" onclick="sendMessage()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+  <div class="chat-disclaimer">For education only · Not a substitute for medical advice</div>
+</div>
+
+<script>
+  var chatHistory = [];
+  var chatOpen = false;
+  var chatBusy = false;
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    document.getElementById('chat-window').classList.toggle('open', chatOpen);
+    document.getElementById('chat-badge').classList.remove('show');
+    if (chatOpen) {
+      setTimeout(function() { document.getElementById('chat-input').focus(); }, 100);
+    }
+  }
+
+  function sendSuggestion(btn) {
+    var text = btn.textContent;
+    document.getElementById('chat-suggestions').style.display = 'none';
+    submitMessage(text);
+  }
+
+  function sendMessage() {
+    var input = document.getElementById('chat-input');
+    var text = input.value.trim();
+    if (!text || chatBusy) return;
+    input.value = '';
+    input.style.height = 'auto';
+    document.getElementById('chat-suggestions').style.display = 'none';
+    submitMessage(text);
+  }
+
+  function submitMessage(text) {
+    appendMessage('user', text);
+    chatHistory.push({ role: 'user', content: text });
+    chatBusy = true;
+    document.getElementById('chat-send-btn').disabled = true;
+    document.getElementById('chat-typing').classList.add('show');
+    scrollChat();
+
+    fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      document.getElementById('chat-typing').classList.remove('show');
+      var reply = data.reply || 'Something went wrong. Please try again.';
+      chatHistory.push({ role: 'assistant', content: reply });
+      appendMessage('bot', reply);
+      chatBusy = false;
+      document.getElementById('chat-send-btn').disabled = false;
+      if (!chatOpen) { document.getElementById('chat-badge').classList.add('show'); }
+    })
+    .catch(function() {
+      document.getElementById('chat-typing').classList.remove('show');
+      appendMessage('bot', 'I am having trouble connecting right now. Please try again in a moment.');
+      chatBusy = false;
+      document.getElementById('chat-send-btn').disabled = false;
+    });
+  }
+
+  function appendMessage(role, text) {
+    var msgs = document.getElementById('chat-messages');
+    var div = document.createElement('div');
+    div.className = 'chat-msg ' + role;
+    var avatar = document.createElement('div');
+    avatar.className = 'chat-msg-avatar';
+    avatar.textContent = role === 'bot' ? '🌿' : '👤';
+    var bubble = document.createElement('div');
+    bubble.className = 'chat-bubble';
+    bubble.textContent = text;
+    div.appendChild(avatar);
+    div.appendChild(bubble);
+    msgs.appendChild(div);
+    scrollChat();
+  }
+
+  function scrollChat() {
+    var msgs = document.getElementById('chat-messages');
+    setTimeout(function() { msgs.scrollTop = msgs.scrollHeight; }, 50);
+  }
+</script>
+</body>
+</html>
