@@ -2037,8 +2037,8 @@
     rectopexy: {
       title: 'Rectopexy Surgery',
       body: 'A step-by-step guide to laparoscopic rectopexy — the keyhole procedure used to correct rectal prolapse. Includes what to expect from the operation and the immediate recovery period.',
-      vimeoId: null,
-      vimeoH: null
+      vimeoId: '1180494424',
+      vimeoH: '039526af52'
     }
   };
 
@@ -2051,16 +2051,7 @@
       const hParam = a.vimeoH ? '&h=' + a.vimeoH : '';
       mediaEl.innerHTML = '<div class="modal-video-wrap"><iframe src="https://player.vimeo.com/video/' + a.vimeoId + '?badge=0&autopause=0&player_id=0&app_id=58479' + hParam + '" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="' + a.title + '"></iframe></div>';
     } else {
-      mediaEl.innerHTML = '<div class="modal-placeholder"><div style="font-size:48px">&#9654;</div><p><div style="padding:56.25% 0 0 0;position:relative;">
-  <iframe
-    src="https://player.vimeo.com/video/1180494424?h=039526af52&badge=0&autopause=0&player_id=0&app_id=58479"
-    frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;"
-    title="Rectopexy Surgery"
-  ></iframe>
-</div>
-<script src="https://player.vimeo.com/api/player.js"></script>/p></div>';
+      mediaEl.innerHTML = '<div class="modal-placeholder"><div style="font-size:48px">&#9654;</div><p>Animation coming soon</p></div>';
     }
     document.getElementById('overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
